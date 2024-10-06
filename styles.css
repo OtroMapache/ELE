@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.exercise {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 120px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    color: red;
+}
