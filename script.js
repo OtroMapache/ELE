@@ -11,80 +11,90 @@ for (let i = 0; i < acc.length; i++) {
 // Check answers for Pretérito Simple
 function checkSimple() {
     const answers = {
-        simple1: "corrí",
-        simple2: "leyó"
+        simple1: "salí",
+        simple2: "cenamos",
+        simple3: "fueron",
+        simple4: "vi"
     };
-    validateExercise(answers, "simpleFeedback");
+    validateAnswers("exerciseSimple", answers, "simpleFeedback");
 }
 
 function revealSimple() {
-    revealAnswers({
-        simple1: "corrí",
-        simple2: "leyó"
-    }, "simpleFeedback");
+    const answers = {
+        simple1: "salí",
+        simple2: "cenamos",
+        simple3: "fueron",
+        simple4: "vi"
+    };
+    revealAnswers(answers, "simpleFeedback");
 }
 
 // Check answers for Pretérito Indefinido
 function checkIndefinido() {
     const answers = {
-        indefinido1: "vivía",
-        indefinido2: "iba"
+        indefinido1: "estudiaba",
+        indefinido2: "trabajaba",
+        indefinido3: "íbamos",
+        indefinido4: "leían"
     };
-    validateExercise(answers, "indefinidoFeedback");
+    validateAnswers("exerciseIndefinido", answers, "indefinidoFeedback");
 }
 
 function revealIndefinido() {
-    revealAnswers({
-        indefinido1: "vivía",
-        indefinido2: "iba"
-    }, "indefinidoFeedback");
+    const answers = {
+        indefinido1: "estudiaba",
+        indefinido2: "trabajaba",
+        indefinido3: "íbamos",
+        indefinido4: "leían"
+    };
+    revealAnswers(answers, "indefinidoFeedback");
 }
 
-// Check answers for Both Pretéritos
+// Check answers for both tenses
 function checkBoth() {
     const answers = {
-        both1: "estuve",
-        both2: "llamó",
-        both3: "vio",
-        both4: "hacía"
+        both1: "jugaba",
+        both2: "volví",
+        both3: "solía",
+        both4: "vi"
     };
-    validateExercise(answers, "bothFeedback");
+    validateAnswers("exerciseBoth", answers, "bothFeedback");
 }
 
 function revealBoth() {
-    revealAnswers({
-        both1: "estuve",
-        both2: "llamó",
-        both3: "vio",
-        both4: "hacía"
-    }, "bothFeedback");
+    const answers = {
+        both1: "jugaba",
+        both2: "volví",
+        both3: "solía",
+        both4: "vi"
+    };
+    revealAnswers(answers, "bothFeedback");
 }
 
-// General validation function
-function validateExercise(answers, feedbackId) {
-    let feedback = "";
-    let allCorrect = true;
+// General validation and reveal functions
+function validateAnswers(formId, answers, feedbackId) {
+    const form = document.getElementById(formId);
+    let feedback = "Resultados: <br>";
+    let correct = true;
 
     for (const [key, value] of Object.entries(answers)) {
-        const userAnswer = document.getElementById(key).value.trim().toLowerCase();
-        if (userAnswer !== value) {
-            feedback += `Error en ${key}: Debía ser "${value}".<br>`;
-            allCorrect = false;
+        const input = document.getElementById(key).value;
+        if (input === value) {
+            feedback += `${value} - Correcto<br>`;
+        } else {
+            feedback += `${input} - Incorrecto, la respuesta correcta es: ${value}<br>`;
+            correct = false;
         }
-    }
-
-    if (allCorrect) {
-        feedback = "¡Todas las respuestas son correctas!";
     }
 
     document.getElementById(feedbackId).innerHTML = feedback;
 }
 
-// Reveal answers function
 function revealAnswers(answers, feedbackId) {
-    let feedback = "Respuestas:<br>";
+    let feedback = "Respuestas correctas: <br>";
     for (const [key, value] of Object.entries(answers)) {
         feedback += `${key}: ${value}<br>`;
     }
     document.getElementById(feedbackId).innerHTML = feedback;
 }
+
