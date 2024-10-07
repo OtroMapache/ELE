@@ -3,30 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección: Pretérito Indefinido e Imperfecto</title>
+    <title>Lección: Pretérito Simple e Indefinido</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Pretérito Indefinido y Pretérito Imperfecto</h1>
-        <p>
-            <b>Pretérito Indefinido:</b> Se utiliza para hablar de acciones que ocurrieron en el pasado y que ya están completadas.
-            <br><b>Ejemplo:</b> Ayer <i>comí</i> pizza. (acción finalizada)
-        </p>
-        <p>
-            <b>Pretérito Imperfecto:</b> Se utiliza para hablar de acciones que ocurrían de manera habitual en el pasado o para describir situaciones en el pasado.
-            <br><b>Ejemplo:</b> Cuando era niño, <i>comía</i> pizza todos los fines de semana. (acción repetida)
-        </p>
+        <h1>Pretérito Simple e Indefinido</h1>
+        
+        <button class="accordion">1. Pretérito Simple</button>
+        <div class="panel">
+            <p>
+                El pretérito simple se utiliza para hablar de acciones que ocurrieron en un momento específico del pasado y que ya están completadas.
+                <br><b>Ejemplo:</b> Ayer <i>comí</i> pizza.
+            </p>
+        </div>
 
-        <div class="exercise">
-            <h2>Ejercicio:</h2>
-            <p>Completa los espacios en blanco con el verbo correcto en pretérito indefinido o imperfecto.</p>
-            <form id="exerciseForm">
-                Ayer, cuando <input type="text" id="verb1" placeholder="(yo - estar)"> en casa, mi madre <input type="text" id="verb2" placeholder="(ella - llamar)"> para decirme que <input type="text" id="verb3" placeholder="(ella - ver)"> una película increíble. Mientras ella <input type="text" id="verb4" placeholder="(ella - hablar)">, yo <input type="text" id="verb5" placeholder="(yo - hacer)"> la cena.
+        <button class="accordion">2. Actividades del Pretérito Simple</button>
+        <div class="panel">
+            <p>Completa los espacios en blanco con el verbo en pretérito simple adecuado.</p>
+            <form id="exerciseSimple">
+                Ayer <input type="text" id="simple1" placeholder="(yo - correr)"> al parque y luego <input type="text" id="simple2" placeholder="(ella - leer)"> un libro.
                 <br><br>
-                <button type="button" class="submit-btn" onclick="checkAnswers()">Enviar</button>
+                <button type="button" class="submit-btn" onclick="checkSimple()">Comprobar</button>
+                <button type="button" class="reveal-btn" onclick="revealSimple()">Revelar Respuestas</button>
             </form>
-            <div class="feedback" id="feedback"></div>
+            <div class="feedback" id="simpleFeedback"></div>
+        </div>
+
+        <button class="accordion">3. Pretérito Indefinido</button>
+        <div class="panel">
+            <p>
+                El pretérito indefinido se usa para hablar de acciones habituales o descripciones en el pasado.
+                <br><b>Ejemplo:</b> Cuando era niño, <i>comía</i> pizza todos los fines de semana.
+            </p>
+        </div>
+
+        <button class="accordion">4. Actividades del Pretérito Indefinido</button>
+        <div class="panel">
+            <p>Completa los espacios en blanco con el verbo en pretérito indefinido adecuado.</p>
+            <form id="exerciseIndefinido">
+                Cuando era joven, <input type="text" id="indefinido1" placeholder="(yo - vivir)"> en España y todos los días <input type="text" id="indefinido2" placeholder="(ella - ir)"> a la escuela en bicicleta.
+                <br><br>
+                <button type="button" class="submit-btn" onclick="checkIndefinido()">Comprobar</button>
+                <button type="button" class="reveal-btn" onclick="revealIndefinido()">Revelar Respuestas</button>
+            </form>
+            <div class="feedback" id="indefinidoFeedback"></div>
+        </div>
+
+        <button class="accordion">5. Comparación entre ambos pretéritos</button>
+        <div class="panel">
+            <p>
+                El pretérito simple se usa para acciones puntuales y completadas en el pasado. El pretérito indefinido se usa para acciones habituales o descripciones en el pasado.
+                <br><b>Ejemplo:</b> Ayer <i>comí</i> (pretérito simple) pizza, pero cuando era niño <i>comía</i> (pretérito indefinido) pizza todos los fines de semana.
+            </p>
+        </div>
+
+        <button class="accordion">6. Actividad de ambos pretéritos</button>
+        <div class="panel">
+            <p>Completa los espacios en blanco con el pretérito simple o indefinido adecuado.</p>
+            <form id="exerciseBoth">
+                Ayer <input type="text" id="both1" placeholder="(yo - estar)"> en casa y mi madre <input type="text" id="both2" placeholder="(ella - llamar)"> para contarme que <input type="text" id="both3" placeholder="(ella - ver)"> una película. Cuando yo era joven, siempre <input type="text" id="both4" placeholder="(yo - hacer)"> deporte los sábados.
+                <br><br>
+                <button type="button" class="submit-btn" onclick="checkBoth()">Comprobar</button>
+                <button type="button" class="reveal-btn" onclick="revealBoth()">Revelar Respuestas</button>
+            </form>
+            <div class="feedback" id="bothFeedback"></div>
         </div>
     </div>
 
