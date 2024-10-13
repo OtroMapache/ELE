@@ -1,3 +1,13 @@
+let accordionButtons = document.querySelectorAll('.accordion-button');
+
+accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        let content = button.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+// Canvas de dibujo
 let canvas = document.getElementById('drawingCanvas');
 let ctx = canvas.getContext('2d');
 let drawing = false;
@@ -40,6 +50,7 @@ function saveCanvas() {
     link.href = canvas.toDataURL();
     link.click();
 }
+
 
 
 
