@@ -1,40 +1,15 @@
-// Lógica del acordeón para desplegar verticalmente
-document.querySelectorAll('.accordion-button').forEach(button => {
-    button.addEventListener('click', () => {
-        button.classList.toggle('active');
-    });
-});
-
-// Funciones para comprobar actividades
-function checkAnswers() {
-    alert("Comprobando respuestas...");
-}
-
-function revealAnswers() {
-    alert("Revelando respuestas correctas...");
-}
-
-function checkCrossword() {
-    alert("Comprobando crucigrama...");
-}
-
-function revealCrossword() {
-    alert("Revelando crucigrama...");
-}
-
-function checkFillGaps() {
-    alert("Comprobando texto...");
-}
-
-function revealFillGaps() {
-    alert("Revelando respuestas correctas...");
-}
-
-// Funcionalidad de la actividad de dibujo
 let canvas = document.getElementById('drawingCanvas');
 let ctx = canvas.getContext('2d');
 let drawing = false;
 
+// Cargar imagen base en el canvas
+let img = new Image();
+img.src = 'gato_artista_base.png'; // Nombre de la imagen base
+img.onload = function() {
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+
+// Iniciar dibujo
 canvas.addEventListener('mousedown', function(e) {
     drawing = true;
     ctx.beginPath();
@@ -52,15 +27,19 @@ canvas.addEventListener('mouseup', function() {
     drawing = false;
 });
 
+// Borrar el lienzo y recargar la imagen base
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Recargar la imagen base
 }
 
+// Guardar el dibujo como imagen
 function saveCanvas() {
     let link = document.createElement('a');
     link.download = 'Gato_Artista_pintura.png';
     link.href = canvas.toDataURL();
     link.click();
 }
+
 
 
