@@ -1,100 +1,66 @@
-// Accordion functionality
-const acc = document.getElementsByClassName("accordion");
-for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
+// Lógica del acordeón para desplegar verticalmente
+document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
     });
+});
+
+// Funciones para comprobar actividades
+function checkAnswers() {
+    alert("Comprobando respuestas...");
 }
 
-// Check answers for Pretérito Simple
-function checkSimple() {
-    const answers = {
-        simple1: "salí",
-        simple2: "cenamos",
-        simple3: "fueron",
-        simple4: "vi"
-    };
-    validateAnswers("exerciseSimple", answers, "simpleFeedback");
+function revealAnswers() {
+    alert("Revelando respuestas correctas...");
 }
 
-function revealSimple() {
-    const answers = {
-        simple1: "salí",
-        simple2: "cenamos",
-        simple3: "fueron",
-        simple4: "vi"
-    };
-    revealAnswers(answers, "simpleFeedback");
+function checkCrossword() {
+    alert("Comprobando crucigrama...");
 }
 
-// Check answers for Pretérito Indefinido
-function checkIndefinido() {
-    const answers = {
-        indefinido1: "estudiaba",
-        indefinido2: "trabajaba",
-        indefinido3: "íbamos",
-        indefinido4: "leían"
-    };
-    validateAnswers("exerciseIndefinido", answers, "indefinidoFeedback");
+function revealCrossword() {
+    alert("Revelando crucigrama...");
 }
 
-function revealIndefinido() {
-    const answers = {
-        indefinido1: "estudiaba",
-        indefinido2: "trabajaba",
-        indefinido3: "íbamos",
-        indefinido4: "leían"
-    };
-    revealAnswers(answers, "indefinidoFeedback");
+function checkFillGaps() {
+    alert("Comprobando texto...");
 }
 
-// Check answers for both tenses
-function checkBoth() {
-    const answers = {
-        both1: "jugaba",
-        both2: "volví",
-        both3: "solía",
-        both4: "vi"
-    };
-    validateAnswers("exerciseBoth", answers, "bothFeedback");
+function revealFillGaps() {
+    alert("Revelando respuestas correctas...");
 }
 
-function revealBoth() {
-    const answers = {
-        both1: "jugaba",
-        both2: "volví",
-        both3: "solía",
-        both4: "vi"
-    };
-    revealAnswers(answers, "bothFeedback");
-}
+// Funcionalidad de la actividad de dibujo
+let canvas = document.getElementById('drawingCanvas');
+let ctx = canvas.getContext('2d');
+let drawing = false;
 
-// General validation and reveal functions
-function validateAnswers(formId, answers, feedbackId) {
-    const form = document.getElementById(formId);
-    let feedback = "Resultados: <br>";
-    let correct = true;
+canvas.addEventListener('mousedown', function(e) {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+});
 
-    for (const [key, value] of Object.entries(answers)) {
-        const input = document.getElementById(key).value;
-        if (input === value) {
-            feedback += `${value} - Correcto<br>`;
-        } else {
-            feedback += `${input} - Incorrecto, la respuesta correcta es: ${value}<br>`;
-            correct = false;
-        }
+canvas.addEventListener('mousemove', function(e) {
+    if (drawing) {
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
     }
+});
 
-    document.getElementById(feedbackId).innerHTML = feedback;
+canvas.addEventListener('mouseup', function() {
+    drawing = false;
+});
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function revealAnswers(answers, feedbackId) {
-    let feedback = "Respuestas correctas: <br>";
-    for (const [key, value] of Object.entries(answers)) {
-        feedback += `${key}: ${value}<br>`;
-    }
-    document.getElementById(feedbackId).innerHTML = feedback;
+function saveCanvas() {
+    let link = document.createElement('a');
+    link.download = 'Gato_Artista_pintura.png';
+    link.href = canvas.toDataURL();
+    link.click();
 }
+
 
