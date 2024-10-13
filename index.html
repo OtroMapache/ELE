@@ -7,84 +7,115 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Pretérito Simple e Indefinido</h1>
+    <h1>Lección: Pretérito Simple e Indefinido</h1>
 
-        <button class="accordion">1. Pretérito Simple</button>
-        <div class="panel">
-            <p>
-                El <b>pretérito simple</b> (también conocido como pretérito perfecto simple) se usa para expresar acciones que ocurrieron en un momento específico del pasado y que están completadas. Esta forma verbal tiene un principio y un final claramente definidos. 
-                <br><br>
-                <b>Ejemplos:</b><br>
-                - Ayer <i>fui</i> al cine.<br>
-                - El año pasado <i>viajé</i> a México.<br><br>
-                Conjugaciones:<br>
-                Yo <i>hablé</i>, tú <i>hablaste</i>, él/ella <i>habló</i>, nosotros <i>hablamos</i>, vosotros <i>hablasteis</i>, ellos <i>hablaron</i>.
-            </p>
+    <div class="accordion">
+        <div>
+            <button class="accordion-button">1. Pretérito Simple</button>
+            <div class="accordion-content">
+                <h2>Explicación</h2>
+                <p>El pretérito simple se usa para hablar de acciones terminadas en el pasado. Se usa para describir acciones puntuales y completas.</p>
+            </div>
         </div>
 
-        <button class="accordion">2. Actividades del Pretérito Simple</button>
-        <div class="panel">
-            <p>Completa los espacios en blanco con el verbo en pretérito simple adecuado.</p>
-            <form id="exerciseSimple">
-                Ayer <input type="text" id="simple1" placeholder="(yo - salir)"> con mis amigos y <input type="text" id="simple2" placeholder="(nosotros - cenar)"> en un restaurante. Después, <input type="text" id="simple3" placeholder="(ellos - ir)"> al cine y <input type="text" id="simple4" placeholder="(yo - ver)"> una película muy interesante.
-                <br><br>
-                <button type="button" class="submit-btn" onclick="checkSimple()">Comprobar</button>
-                <button type="button" class="reveal-btn" onclick="revealSimple()">Revelar Respuestas</button>
-            </form>
-            <div class="feedback" id="simpleFeedback"></div>
+        <div>
+            <button class="accordion-button">2. Actividades del Pretérito Simple</button>
+            <div class="accordion-content">
+                <h2>Actividad: Verbos relacionados con el arte y la naturaleza</h2>
+                <p>Selecciona las formas correctas del pretérito simple para cada verbo.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Infinitivo</th>
+                            <th>Pretérito Simple</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>crear</td>
+                            <td>
+                                <select>
+                                    <option value="1">creé</option>
+                                    <option value="2">creí</option>
+                                    <option value="3">creaste</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>pintar</td>
+                            <td>
+                                <select>
+                                    <option value="1">pinté</option>
+                                    <option value="2">pintió</option>
+                                    <option value="3">pintaste</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>dibujar</td>
+                            <td>
+                                <select>
+                                    <option value="1">dibujé</option>
+                                    <option value="2">dibujiste</option>
+                                    <option value="3">dibuji</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Más verbos... -->
+                    </tbody>
+                </table>
+                <button onclick="checkAnswers()">Comprobar</button>
+                <button onclick="revealAnswers()">Revelar Respuestas</button>
+            </div>
         </div>
 
-        <button class="accordion">3. Pretérito Indefinido</button>
-        <div class="panel">
-            <p>
-                El <b>pretérito indefinido</b> (también llamado pretérito imperfecto) describe acciones repetidas o habituales en el pasado, o bien situaciones que estaban en curso durante un periodo de tiempo no delimitado.
-                <br><br>
-                <b>Ejemplos:</b><br>
-                - Cuando era niño, <i>jugaba</i> en el parque todos los días.<br>
-                - Mi abuela <i>solía preparar</i> comida deliciosa.<br><br>
-                Conjugaciones:<br>
-                Yo <i>comía</i>, tú <i>comías</i>, él/ella <i>comía</i>, nosotros <i>comíamos</i>, vosotros <i>comíais</i>, ellos <i>comían</i>.
-            </p>
+        <div>
+            <button class="accordion-button">3. Pretérito Indefinido</button>
+            <div class="accordion-content">
+                <h2>Explicación</h2>
+                <p>El pretérito indefinido también se usa para hablar de acciones completadas en el pasado, pero se usa en contextos narrativos o para referirse a acciones repetidas.</p>
+            </div>
         </div>
 
-        <button class="accordion">4. Actividades del Pretérito Indefinido</button>
-        <div class="panel">
-            <p>Completa los espacios en blanco con el verbo en pretérito indefinido adecuado.</p>
-            <form id="exerciseIndefinido">
-                Cuando era joven, <input type="text" id="indefinido1" placeholder="(yo - estudiar)"> en la universidad y <input type="text" id="indefinido2" placeholder="(ella - trabajar)"> los fines de semana. Todos los días, <input type="text" id="indefinido3" placeholder="(nosotros - ir)"> a la biblioteca y <input type="text" id="indefinido4" placeholder="(ellos - leer)"> muchos libros.
-                <br><br>
-                <button type="button" class="submit-btn" onclick="checkIndefinido()">Comprobar</button>
-                <button type="button" class="reveal-btn" onclick="revealIndefinido()">Revelar Respuestas</button>
-            </form>
-            <div class="feedback" id="indefinidoFeedback"></div>
+        <div>
+            <button class="accordion-button">4. Actividades del Pretérito Indefinido</button>
+            <div class="accordion-content">
+                <h2>Actividad: Crucigrama</h2>
+                <p>Completa el crucigrama con verbos en pretérito indefinido.</p>
+                <!-- Aquí se agregaría el crucigrama -->
+                <button onclick="checkCrossword()">Comprobar</button>
+                <button onclick="revealCrossword()">Revelar Respuestas</button>
+            </div>
         </div>
 
-        <button class="accordion">5. Comparación entre ambos pretéritos</button>
-        <div class="panel">
-            <p>
-                <b>¿Cuál es la diferencia entre el pretérito simple y el pretérito indefinido?</b><br>
-                - El pretérito simple indica acciones específicas y completadas en el pasado: Ayer <i>fui</i> al mercado.<br>
-                - El pretérito indefinido se usa para describir acciones habituales o en proceso en el pasado: Cuando era niño, <i>jugaba</i> en el parque todos los días.
-                <br><br>
-                <b>Ejemplo combinado:</b><br>
-                Ayer <i>fui</i> (pretérito simple) al parque donde <i>solía jugar</i> (pretérito indefinido) cuando era niño.
-            </p>
+        <div>
+            <button class="accordion-button">5. Comparación entre ambos pretéritos</button>
+            <div class="accordion-content">
+                <h2>Explicación</h2>
+                <p>El pretérito simple y el pretérito indefinido tienen usos similares, pero el contexto define cuál es más apropiado.</p>
+            </div>
         </div>
 
-        <button class="accordion">6. Actividad de ambos pretéritos</button>
-        <div class="panel">
-            <p>Completa los espacios en blanco con el pretérito simple o indefinido adecuado.</p>
-            <form id="exerciseBoth">
-                Cuando era niño, siempre <input type="text" id="both1" placeholder="(yo - jugar)"> en el parque después de la escuela. Ayer <input type="text" id="both2" placeholder="(yo - volver)"> al parque donde <input type="text" id="both3" placeholder="(yo - soler)"> ir todos los días y <input type="text" id="both4" placeholder="(ellos - ver)"> a mis amigos de la infancia.
-                <br><br>
-                <button type="button" class="submit-btn" onclick="checkBoth()">Comprobar</button>
-                <button type="button" class="reveal-btn" onclick="revealBoth()">Revelar Respuestas</button>
-            </form>
-            <div class="feedback" id="bothFeedback"></div>
+        <div>
+            <button class="accordion-button">6. Actividad de ambos pretéritos</button>
+            <div class="accordion-content">
+                <h2>Actividad: Completa el texto</h2>
+                <p>Llena los espacios en blanco con las formas correctas del pretérito.</p>
+                <p>Gato Artista soñaba con ser un gran pintor y escultor...</p>
+                <!-- Aquí va el texto a completar -->
+                <button onclick="checkFillGaps()">Comprobar</button>
+                <button onclick="revealFillGaps()">Revelar Respuestas</button>
+
+                <p>Gato Artista está trabajando en esta pintura, ¿podrías ayudarle a terminarla?</p>
+                <canvas id="drawingCanvas" width="600" height="400" style="border:1px solid #000000;"></canvas>
+                <br>
+                <button onclick="clearCanvas()">Borrar Dibujo</button>
+                <button onclick="saveCanvas()">Guardar Dibujo</button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
