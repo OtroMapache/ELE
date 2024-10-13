@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5dc; /* Color crema de fondo */
-    margin: 0;
+    background-color: #fdf6e3; /* Color crema */
     padding: 20px;
 }
 
@@ -10,66 +9,56 @@ h1 {
 }
 
 .accordion {
+    display: flex;
+    flex-direction: column; /* Hace que los menús sean verticales */
     width: 100%;
+    max-width: 600px;
+    margin: auto;
 }
 
 .accordion-button {
-    width: 100%;
-    background-color: #8b5e3c;
-    color: white;
-    padding: 15px;
-    border: none;
-    text-align: left;
-    font-size: 18px;
+    background-color: #f4d6a6;
+    color: black;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 5px;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s;
+    width: 100%;
+    font-size: 16px;
 }
 
 .accordion-button:hover {
-    background-color: #613c2c;
+    background-color: #edd694;
 }
 
 .accordion-content {
+    background-color: #faf3e6;
     display: none;
-    background-color: #f9f9f9;
+    overflow: hidden;
     padding: 15px;
-    border-left: 1px solid #ccc;
-}
-
-.accordion-button.active + .accordion-content {
-    display: block;
+    border: 1px solid #ddd;
 }
 
 table {
     width: 100%;
-    margin: 15px 0;
     border-collapse: collapse;
+    margin: 10px 0;
 }
 
-table th, table td {
-    border: 1px solid #ccc;
+table, th, td {
+    border: 1px solid black;
     padding: 10px;
-    text-align: left;
+}
+
+th {
+    background-color: #f4d6a6;
 }
 
 button {
-    background-color: #8b5e3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
     margin: 10px;
-    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #613c2c;
-}
-
-textarea {
-    width: 100%;
-    font-family: Arial, sans-serif;
-}
 
 
