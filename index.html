@@ -18,6 +18,7 @@
             <li><a href="#actividad4">Actividad 4</a></li>
             <li><a href="#actividad5">Actividad 5</a></li>
             <li><a href="#actividad6">Actividad 6</a></li>
+            <li><a href="#actividadDibujo">Actividad de Dibujo</a></li> <!-- Nueva actividad añadida -->
         </ul>
     </nav>
 </header>
@@ -69,12 +70,10 @@
 
 <section id="actividad6">
     <h2>Actividad 6: Completa los espacios con el verbo en pretérito simple</h2>
-
     <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
     <div class="panel">
         <p>Completa los espacios en blanco con los verbos conjugados en pretérito simple.</p>
     </div>
-
     <p>
         Gato Artista <input type="text" id="verb1" placeholder="soñar"> con ser un gran artista. Desde muy pequeño, le 
         <input type="text" id="verb2" placeholder="gustar"> dibujar y 
@@ -92,7 +91,7 @@
         <input type="text" id="verb14" placeholder="pintar"> la naturaleza, los árboles y las plantas de la selva amazónica. Gato Artista se 
         <input type="text" id="verb15" placeholder="quedar"> impresionado. Le 
         <input type="text" id="verb16" placeholder="gustar"> tanto los paisajes, que 
-        <input type="text" id="verb17 placeholder="decidir"> hacer algo similar. Gato Artista 
+        <input type="text" id="verb17" placeholder="decidir"> hacer algo similar. Gato Artista 
         <input type="text" id="verb18" placeholder="regresar"> a su casa muy inspirado. 
         <input type="text" id="verb19" placeholder="mirar"> por la ventana y 
         <input type="text" id="verb20" placeholder="ver"> los árboles y las flores de su jardín. 
@@ -117,29 +116,22 @@
     <button id="checkBtn">Comprobar</button>
     <button id="revealBtn">Revelar respuestas</button>
     <p id="result"></p>
-    </section>
-    
-   <section>
-        <h2>Actividad 2: Dibuja sobre la imagen</h2>
-        <div id="drawing-area">
-            <canvas id="drawing-canvas" width="600" height="400"></canvas>
-            <img id="base-image" src="Gato_Artista_pintura.png" alt="Imagen base" style="display:none;">
-        </div>
-        <div>
-            <h3>Colores</h3>
-            <div class="color-button" style="background-color: red;" onclick="setColor('red')"></div>
-            <div class="color-button" style="background-color: green;" onclick="setColor('green')"></div>
-            <div class="color-button" style="background-color: blue;" onclick="setColor('blue')"></div>
-            <div class="color-button" style="background-color: yellow;" onclick="setColor('yellow')"></div>
-            <div class="color-button" style="background-color: black;" onclick="setColor('black')"></div>
-        </div>
-        <button id="downloadBtn">Descargar Imagen</button>
-    </section>
-</main>
+</section>
 
-<footer>
-    <p>© 2024 Actividad de Español</p>
-</footer>
+<section id="actividadDibujo">
+    <h2>Actividad de Dibujo</h2>
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Dibuja una escena inspirada en la historia de Gato Artista. Utiliza al menos 10 colores diferentes y asegúrate de que el dibujo esté sobre la imagen de fondo que se proporciona.</p>
+    </div>
+    
+    <canvas id="drawingCanvas" width="600" height="400" style="border:1px solid #000000;"></canvas>
+    <p>Selecciona un color:</p>
+    <input type="color" id="colorPicker" value="#000000">
+    <button id="clearBtn">Limpiar</button>
+    <button id="saveBtn">Guardar Dibujo</button>
+    <p id="saveMessage"></p>
+</section>
 
 <script src="script.js"></script>
 </body>
