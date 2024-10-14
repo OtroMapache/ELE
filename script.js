@@ -26,6 +26,15 @@ document.getElementById("checkBtn").addEventListener("click", function() {
         "quedaron",
         "dijo",
         "empezó"
+        "gustaba"
+        "pintaba"
+        "veía"
+        "recordaba"
+        "mostró"
+        "vieron"
+        "felicitaron"
+        "sonrió"
+        "pensó"
     ];
 
     let score = 0;
