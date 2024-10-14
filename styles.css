@@ -25,6 +25,11 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  color: black; /* Asegura que el texto dentro del panel sea visible */
+}
+
+.panel p {
+  color: black; /* También puedes aplicar esto para asegurarte de que cualquier texto dentro del panel sea negro */
 }
 
 /* Estilos responsivos */
@@ -57,6 +62,7 @@ input[type="text"] {
   margin: 4px 0;
   box-sizing: border-box;
   font-size: 16px;
+  color: black; /* Asegura que el texto escrito sea negro */
 }
 
 button {
