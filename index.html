@@ -3,78 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad de Español</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Acordeones de Pretérito</title>
 </head>
 <body>
-
-<header>
-    <h1>Unidad Didáctica: Pretérito Simple VS Pretérito Indefinido</h1>
-    <nav>
-        <ul>
-            <li><a href="#actividad1">Introducción</a></li>
-            <li><a href="#actividad2">Actividad 2</a></li>
-            <li><a href="#actividad3">Actividad 3</a></li>
-            <li><a href="#actividad4">Actividad 4</a></li>
-            <li><a href="#actividad5">Actividad 5</a></li>
-            <li><a href="#actividad6">Actividad 6</a></li>
-            <li><a href="#actividadDibujo">Actividad de Dibujo</a></li> <!-- Nueva actividad añadida -->
-        </ul>
-    </nav>
-</header>
-
-<section id="introducción">
-    <h2>Introducción</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Recuerda que...</p>
-        <p>Los tiempos pretéritos sirven para hablar de eventos que ya pasaron, pero hay diferencias entre el Pretérito Simple y el Pretérito Indefinido. En esta unidad aprenderás a diferenciar entre estas dos formas de pasado y a usarlos correctamente. También aprenderás sobre arte y naturaleza ¡Prepárate!</p>
-    </div>
-    <p>Contenido de la Actividad 1...</p>
-</section>
-
-<section id="actividad2">
-    <h2>Actividad 2: Título de la Actividad 2</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Instrucciones de la Actividad 2.</p>
-    </div>
-    <p>Contenido de la Actividad 2...</p>
-</section>
-
-<section id="actividad3">
-    <h2>Actividad 3: Título de la Actividad 3</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Instrucciones de la Actividad 3.</p>
-    </div>
-    <p>Contenido de la Actividad 3...</p>
-</section>
-
-<section id="actividad4">
-    <h2>Actividad 4: Título de la Actividad 4</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Instrucciones de la Actividad 4.</p>
-    </div>
-    <p>Contenido de la Actividad 4...</p>
-</section>
-
-<section id="actividad5">
-    <h2>Actividad 5: Título de la Actividad 5</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Instrucciones de la Actividad 5.</p>
-    </div>
-    <p>Contenido de la Actividad 5...</p>
-</section>
-
-<section id="actividad6">
-    <h2>Actividad 6: Completa los espacios con el verbo en pretérito simple</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Completa los espacios en blanco con los verbos conjugados en pretérito simple.</p>
-    </div>
+    <h1>Acordeones de Pretérito</h1>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">1. Pretérito Simple</div>
+            <div class="accordion-content">Contenido del Pretérito Simple.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">2. Actividades del Pretérito Simple</div>
+            <div class="accordion-content">Contenido de Actividades del Pretérito Simple.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">3. Pretérito Indefinido</div>
+            <div class="accordion-content">Contenido del Pretérito Indefinido.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">4. Actividades del Pretérito Indefinido</div>
+            <div class="accordion-content">Contenido de Actividades del Pretérito Indefinido.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">5. Comparación entre ambos Pretéritos</div>
+            <div class="accordion-content">Contenido de Comparación entre ambos Pretéritos.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">6. Actividad de ambos Pretéritos</div>
+            <div class="accordion-content">
+                <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
+                <p id="fill-in-the-blanks">
     <p>
         Gato Artista <input type="text" id="verb1" placeholder="soñar"> con ser un gran artista. Desde muy pequeño, le 
         <input type="text" id="verb2" placeholder="gustar"> dibujar y 
@@ -113,24 +72,12 @@
         <input type="text" id="verb35" placeholder="sonreir"> y 
         <input type="text" id="verb36" placeholder="pensar">: "Gracias a mi maestro y a Abel Rodríguez, encontré el amor por la naturaleza y el arte".
     </p>
-    
-    <button id="checkBtn">Comprobar</button>
-    <button id="revealBtn">Revelar respuestas</button>
-    <p id="result"></p>
-</section>
-
-<section id="drawingSection">
-    <h2>Actividad de Dibujo</h2>
-    <img id="baseImage" src="Gato_Artista_pintura.png" alt="Imagen base" style="display: none;">
-    <canvas id="drawingCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
-    <input type="color" id="colorPicker" value="#000000">
-    <button id="clearBtn">Limpiar</button>
-    <button id="saveBtn">Guardar Dibujo</button>
-    <p id="saveMessage"></p>
-</section>
-
-</section>
-
-<script src="script.js"></script>
+                <button onclick="checkFillIn()">Comprobar Respuestas</button>
+                <button onclick="revealAnswers()">Revelar Respuestas</button>
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
