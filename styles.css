@@ -122,3 +122,28 @@ td {
   font-weight: bold;
 }
 
+
+#paint-container {
+  position: relative;
+  display: inline-block;
+}
+
+#paint-canvas {
+  border: 2px solid black;
+  cursor: crosshair;
+}
+
+#background-image {
+  display: none; /* Ocultamos la imagen de fondo porque solo la usamos como referencia */
+}
+
+/* Estilos para los controles */
+#color-picker {
+  margin-top: 10px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
