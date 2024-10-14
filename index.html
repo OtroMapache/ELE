@@ -139,20 +139,34 @@
             <button onclick="revealAnswers()">Revelar respuestas</button>
         </div>
     </div>
-      <!-- Contenedor del canvas -->
- <h1>Actividad: Pinta sobre la imagen</h1>
-  <p>Usa el lápiz para dibujar sobre la imagen. Cambia el color, reinicia el dibujo o descarga tu creación.</p>
-  
+   <h1>Actividad: Pinta sobre la imagen</h1>
+  <p>Usa el lápiz o las herramientas de relleno para dibujar sobre la imagen. Cambia el color, el grosor del lápiz, reinicia el dibujo o descarga tu creación.</p>
+
   <!-- Contenedor del canvas -->
   <div id="paint-container">
     <canvas id="paint-canvas"></canvas>
-    <img id="background-image" src="planta.png" alt="Imagen de fondo">
+    <img id="background-image" src="monstera.png" alt="Imagen de fondo">
   </div>
 
   <!-- Selección de color -->
   <div>
-    <label for="color-picker">Elige el color del lápiz:</label>
+    <label for="color-picker">Elige el color:</label>
     <input type="color" id="color-picker" value="#000000">
+  </div>
+
+  <!-- Selección de herramienta -->
+  <div>
+    <label for="tool-picker">Elige la herramienta:</label>
+    <select id="tool-picker">
+      <option value="pencil">Lápiz</option>
+      <option value="fill">Relleno</option>
+    </select>
+  </div>
+
+  <!-- Selección de grosor -->
+  <div>
+    <label for="brush-size">Grosor del lápiz:</label>
+    <input type="range" id="brush-size" min="1" max="10" value="3">
   </div>
 
   <!-- Botones de acciones -->
@@ -164,4 +178,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
