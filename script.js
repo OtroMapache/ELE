@@ -1,155 +1,75 @@
-function togglePanel(button) {
-    const panel = button.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
-}
+const checkBtn = document.getElementById("checkBtn");
+const revealBtn = document.getElementById("revealBtn");
+const result = document.getElementById("result");
 
-document.getElementById("checkBtn").addEventListener("click", function() {
-    const correctAnswers = [
-        "soñaba",
-        "gustaba",
-        "hacía",
-        "Decidió",
-        "despertó",
-        "Tomó",
-        "empacó",
-        "fue",
-        "llegó",
-        "conoció",
-        "enseñaba",
-        "tuvo",
-        "mostró",
-        "pintó",
-        "quedó",
-        "gustaron",
-        "decidió",
-        "regresó",
-        "Miró",
-        "vió",
-        "Tomó",
-        "pintó",
-        "usó",
-        "llevó",
-        "quedaron",
-        "dijo",
-        "empezó",
-        "gustaba",
-        "pintaba",
-        "veía",
-        "recordaba",
-        "mostró",
-        "vieron",
-        "felicitaron",
-        "sonrió",
-        "pensó"
+checkBtn.addEventListener("click", () => {
+    const verbs = [
+        "soñar", "gustar", "hacer", "decidir", "despertar", "tomar", "empacar", "ir",
+        "llegar", "conocer", "enseñar", "tener", "mostrar", "pintar", "quedar",
+        "gustar", "decidir", "regresar", "mirar", "ver", "tomar", "pintar",
+        "usar", "llevar", "quedaron", "decir", "empezar", "gustar", "pintar",
+        "ver", "recordar", "mostrar", "felicitar", "sonreir", "pensar"
     ];
-
     let score = 0;
-    const inputs = document.querySelectorAll("input[type='text']");
-    
-    inputs.forEach((input, index) => {
-        if (input.value.trim() === correctAnswers[index]) {
+
+    verbs.forEach((verb, index) => {
+        const userInput = document.getElementById(`verb${index + 1}`).value;
+        if (userInput === verb) {
             score++;
-            input.style.backgroundColor = "lightgreen"; // Correct answer
-        } else {
-            input.style.backgroundColor = "lightcoral"; // Wrong answer
         }
     });
 
-    const resultMessage = `Has acertado ${score} de ${correctAnswers.length} respuestas.`;
-    document.getElementById("result").innerText = resultMessage;
+    result.textContent = `Has acertado ${score} de ${verbs.length} respuestas.`;
 });
 
-document.getElementById("revealBtn").addEventListener("click", function() {
-    const correctAnswers = [
-        "soñaba",
-        "gustaba",
-        "hacía",
-        "decidió",
-        "despertó",
-        "empaquetó",
-        "fue",
-        "llegó",
-        "enseñaba",
-        "tuvo",
-        "mostró",
-        "pintó",
-        "quedó",
-        "gustaron",
-        "decidió",
-        "pintó",
-        "pintó",
-        "llevó",
-        "quedaron",
-        "dijo",
-        "empezó"
-    ];
-    const inputs = document.querySelectorAll("input[type='text']");
-    
-    inputs.forEach((input, index) => {
-        input.value = correctAnswers[index]; // Reveal correct answers
-        input.style.backgroundColor = "lightyellow"; // Change background color to indicate answers are revealed
+revealBtn.addEventListener("click", () => {
+    verbs.forEach((verb, index) => {
+        document.getElementById(`verb${index + 1}`).value = verb;
     });
-
-    const resultMessage = "Respuestas reveladas.";
-    document.getElementById("result").innerText = resultMessage;
 });
 
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const colorButtons = document.querySelectorAll('.colorButton');
-let currentColor = 'black';
-let painting = false;
+// Dibujo
+const canvas = document.getElementById('drawingCanvas');
+const context = canvas.getContext('2d');
+const colorPicker = document.getElementById('colorPicker');
+const clearBtn = document.getElementById('clearBtn');
+const saveBtn = document.getElementById('saveBtn');
+const saveMessage = document.getElementById('saveMessage');
 
-// Cargar la imagen de fondo
-const img = new Image();
-img.src = 'Gato_Artista_pintura.png';
-img.onload = () => {
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-};
+let drawing = false;
 
-// Iniciar el dibujo
 canvas.addEventListener('mousedown', (e) => {
-    painting = true;
+    drawing = true;
     draw(e);
 });
 
-// Finalizar el dibujo
 canvas.addEventListener('mouseup', () => {
-    painting = false;
-    ctx.beginPath();
+    drawing = false;
+    context.beginPath();
 });
 
-// Dibujar en el lienzo
-canvas.addEventListener('mousemove', (e) => {
-    if (painting) {
-        draw(e);
-    }
-});
+canvas.addEventListener('mousemove', draw);
 
-// Seleccionar color
-colorButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        currentColor = button.style.backgroundColor;
-        ctx.strokeStyle = currentColor;
-    });
-});
-
-// Función de dibujo
 function draw(e) {
-    ctx.lineWidth = 5; // Ajusta el tamaño del pincel
-    ctx.lineCap = 'round'; // Forma del pincel
-    ctx.strokeStyle = currentColor;
+    if (!drawing) return;
+    context.lineWidth = 5;
+    context.lineCap = 'round';
+    context.strokeStyle = colorPicker.value;
 
-    ctx.lineTo(e.offsetX, e.offsetY);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(e.offsetX, e.offsetY);
+    context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    context.stroke();
+    context.beginPath();
+    context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
 }
 
-// Descargar imagen
-document.getElementById('downloadBtn').addEventListener('click', () => {
+clearBtn.addEventListener('click', () => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+saveBtn.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = 'Gato_Artista_dibujo.png';
+    link.download = 'dibujo.png';
     link.href = canvas.toDataURL();
     link.click();
+    saveMessage.textContent = 'Dibujo guardado como dibujo.png';
 });
