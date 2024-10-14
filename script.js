@@ -1,45 +1,21 @@
-// Funciones para la actividad de unir verbos
-function checkMatching() {
-    alert("Verificando las respuestas...");
-    // Aquí iría la lógica para comprobar la actividad de unir.
-}
-
-function revealMatching() {
-    alert("Revelando las respuestas correctas...");
-    // Aquí mostrarías las respuestas correctas.
-}
-
-// Funciones para el crucigrama
-function checkCrossword() {
-    alert("Verificando el crucigrama...");
-    // Aquí iría la lógica para comprobar el crucigrama.
-}
-
-function revealCrossword() {
-    alert("Revelando las respuestas del crucigrama...");
-    // Aquí mostrarías las respuestas correctas.
-}
-
-// Funciones para llenar los espacios
-function checkFillIn() {
-    alert("Verificando los verbos...");
-    // Aquí iría la lógica para comprobar los verbos en el texto.
-}
-
-function revealFillIn() {
-    alert("Revelando las respuestas correctas...");
-    // Aquí mostrarías las respuestas correctas.
-}
-
-// Funciones para la actividad de dibujo
+// Obtener el canvas y su contexto
 const canvas = document.getElementById("drawingCanvas");
 const ctx = canvas.getContext("2d");
 
+// Variables para dibujar
+let isDrawing = false;
+
+// Cargar la imagen base
+const img = new Image();
+img.src = "images/gato_artista_base.png"; // Reemplaza esta ruta con la ruta correcta de tu imagen
+img.onload = function() {
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+
+// Funciones de dibujo
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mousemove", draw);
-
-let isDrawing = false;
 
 function startDrawing() {
     isDrawing = true;
@@ -62,18 +38,16 @@ function draw(event) {
     ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
 }
 
+// Función para borrar el canvas (y volver a cargar la imagen base)
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Vuelve a cargar la imagen base
 }
 
+// Función para guardar el dibujo
 function saveCanvas() {
     const link = document.createElement('a');
     link.download = 'mi_dibujo.png';
     link.href = canvas.toDataURL();
     link.click();
 }
-
-
-
-
-
