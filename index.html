@@ -139,8 +139,29 @@
             <button onclick="revealAnswers()">Revelar respuestas</button>
         </div>
     </div>
+      <!-- Contenedor del canvas -->
+ <h1>Actividad: Pinta sobre la imagen</h1>
+  <p>Usa el lápiz para dibujar sobre la imagen. Cambia el color, reinicia el dibujo o descarga tu creación.</p>
+  
+  <!-- Contenedor del canvas -->
+  <div id="paint-container">
+    <canvas id="paint-canvas"></canvas>
+    <img id="background-image" src="ruta/de/tu/imagen.jpg" alt="Imagen de fondo">
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Selección de color -->
+  <div>
+    <label for="color-picker">Elige el color del lápiz:</label>
+    <input type="color" id="color-picker" value="#000000">
+  </div>
+
+  <!-- Botones de acciones -->
+  <div>
+    <button id="clear-button">Reiniciar</button>
+    <button id="download-button">Descargar imagen</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
