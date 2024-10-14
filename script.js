@@ -1,113 +1,71 @@
-// Funciones para el acordeón
-var acc = document.getElementsByClassName("accordion-button");
-for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
+// Sopa de Letras
+// No requiere funcionalidad dinámica, simplemente es visual.
 
-// Funciones para la actividad de completar (ambos pretéritos)
-function checkFillIn() {
-    const answers = {
+// Crucigrama (basado en Mango Crucigram)
+document.addEventListener('DOMContentLoaded', function () {
+    var crossword = new Crossword('crossword', 10, 10);
+    crossword.setCell(1, 0, 'C');
+    crossword.setCell(2, 0, 'A');
+    crossword.setCell(3, 0, 'M');
+    crossword.setCell(4, 0, 'I');
+    crossword.setCell(5, 0, 'N');
+    crossword.setCell(6, 0, 'A');
+    crossword.setCell(7, 0, 'R');
+
+    crossword.setCell(0, 1, 'A');
+    crossword.setCell(0, 2, 'P');
+    crossword.setCell(0, 3, 'R');
+    crossword.setCell(0, 4, 'E');
+    crossword.setCell(0, 5, 'N');
+    crossword.setCell(0, 6, 'D');
+    crossword.setCell(0, 7, 'E');
+    crossword.setCell(0, 8, 'R');
+
+    crossword.render();
+});
+
+// Llenar Espacios con Pretéritos
+function checkAnswers() {
+    let answers = {
         verb1: 'soñaba',
         verb2: 'gustaba',
         verb3: 'hacía',
-        verb4: 'tuvo',
-        verb5: 'dio',
-        verb6: 'creaba',
-        verb7: 'pintaba'
+        verb4: 'inscribió',
+        verb5: 'despertó',
+        verb6: 'empaquetó',
+        verb7: 'fue',
+        verb8: 'llegó',
+        verb9: 'enseñaba',
+        verb10: 'tuvo'
     };
 
-    Object.keys(answers).forEach(function(id) {
-        const userAnswer = document.getElementById(id).value.toLowerCase().trim();
-        if (userAnswer === answers[id]) {
-            document.getElementById(id).style.backgroundColor = 'lightgreen'; // Respuesta correcta
+    for (let key in answers) {
+        let userAnswer = document.getElementById(key).value.toLowerCase();
+        if (userAnswer === answers[key]) {
+            document.getElementById(key).style.backgroundColor = 'lightgreen';
         } else {
-            document.getElementById(id).style.backgroundColor = 'lightcoral'; // Respuesta incorrecta
+            document.getElementById(key).style.backgroundColor = 'lightcoral';
         }
-    });
+    }
 }
 
-function revealFillIn() {
-    const answers = {
+function revealAnswers() {
+    let answers = {
         verb1: 'soñaba',
         verb2: 'gustaba',
         verb3: 'hacía',
-        verb4: 'tuvo',
-        verb5: 'dio',
-        verb6: 'creaba',
-        verb7: 'pintaba'
+        verb4: 'inscribió',
+        verb5: 'despertó',
+        verb6: 'empaquetó',
+        verb7: 'fue',
+        verb8: 'llegó',
+        verb9: 'enseñaba',
+        verb10: 'tuvo'
     };
 
-    Object.keys(answers).forEach(function(id) {
-        document.getElementById(id).value = answers[id]; // Revelar la respuesta correcta
-        document.getElementById(id).style.backgroundColor = 'lightgreen'; // Marcar como correcto
-    });
+    for (let key in answers) {
+        document.getElementById(key).value = answers[key];
+        document.getElementById(key).style.backgroundColor = 'lightgreen';
+    }
 }
 
-// Funciones para la actividad de matching (Pretérito Simple)
-function checkMatching() {
-    alert('Función de comprobar pendiente');
-}
-
-function revealMatching() {
-    alert('Función de revelar respuestas pendiente');
-}
-
-// Actividad de dibujo
-const canvas = document.getElementById('drawingCanvas');
-const ctx = canvas.getContext('2d');
-let drawing = false;
-
-canvas.addEventListener('mousedown', startDrawing);
-canvas.addEventListener('mouseup', stopDrawing);
-canvas.addEventListener('mousemove', draw);
-
-function startDrawing(e) {
-    drawing = true;
-    draw(e);
-}
-
-function stopDrawing() {
-    drawing = false;
-    ctx.beginPath();
-}
-
-function draw(e) {
-    if (!drawing) return;
-    ctx.lineWidth = 5;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = 'black';
-    
-    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-}
-
-function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-function saveCanvas() {
-    const dataURL = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = dataURL;
-    link.download = 'mi_dibujo.png';
-    link.click();
-}
-
-// Funciones para el crucigrama (Pretérito Indefinido)
-function checkCrossword() {
-    alert('Función de comprobar crucigrama pendiente');
-}
-
-function revealCrossword() {
-    alert('Función de revelar respuestas del crucigrama pendiente');
-}
