@@ -1,58 +1,60 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f7f1e3; /* Fondo color crema */
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    color: #333;
 }
 
 .accordion-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
+    display: block;
     width: 100%;
     text-align: left;
+    padding: 10px;
+    background-color: #dcd0c0;
+    border: none;
     cursor: pointer;
-    outline: none;
-    transition: background-color 0.2s;
-}
-
-.accordion-button:hover {
-    background-color: #0056b3;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .accordion-content {
-    background-color: white;
-    border: 1px solid #ccc;
     padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
     display: none;
     margin-bottom: 10px;
 }
 
-.accordion-button.active + .accordion-content {
-    display: block;
-}
-
-.match-activity {
+.activity {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.match-activity ul {
-    list-style: none;
-    padding: 0;
+.column {
+    width: 45%;
 }
 
-.crossword {
-    text-align: center;
-    margin: 20px 0;
+button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    cursor: pointer;
 }
 
+#drawingCanvas {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-
-
+input[type="text"] {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+}
