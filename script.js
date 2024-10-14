@@ -1,49 +1,12 @@
-// script.js
 
-function checkMatching() {
-    const correctPairs = {
-        "pintar": "pinté",
-        "crear": "creé",
-        "esculpir": "esculpí",
-        "diseñar": "diseñé",
-        "modelar": "modelé"
-    };
+const accordions = document.querySelectorAll(".accordion-title");
 
-    const userAnswers = {
-        "pintar": document.getElementById("verb1").value,
-        "crear": document.getElementById("verb2").value,
-        "esculpir": document.getElementById("verb3").value,
-        "diseñar": document.getElementById("verb4").value,
-        "modelar": document.getElementById("verb5").value,
-    };
-
-    let correctCount = 0;
-
-    for (let verb in correctPairs) {
-        if (userAnswers[verb] === correctPairs[verb]) {
-            correctCount++;
-        }
-    }
-
-    alert("Has acertado " + correctCount + " de 5 pares.");
-}
-
-function revealMatching() {
-    alert("Las respuestas correctas son:\n" +
-        "pintar - pinté\n" +
-        "crear - creé\n" +
-        "esculpir - esculpí\n" +
-        "diseñar - diseñé\n" +
-        "modelar - modelé");
-}
-
-function checkCrossword() {
-    // Aquí se implementará la lógica para comprobar el crucigrama
-}
-
-function revealCrossword() {
-    // Aquí se implementará la lógica para revelar las respuestas del crucigrama
-}
+accordions.forEach(accordion => {
+    accordion.addEventListener("click", function() {
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+});
 
 function checkFillIn() {
     const correctAnswers = {
