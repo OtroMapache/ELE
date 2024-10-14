@@ -1,3 +1,47 @@
+const correctAnswers = {
+    verb1: 'soñar',
+    verb2: 'gustar',
+    verb3: 'hacer',
+    verb4: 'inscribir',
+    verb5: 'despertar',
+    verb6: 'empaquetar',
+    verb7: 'ir',
+    verb8: 'llegar',
+    verb9: 'enseñar',
+    verb10: 'tener',
+    verb11: 'mostrar',
+    verb12: 'pintar',
+    verb13: 'quedar',
+    verb14: 'gustar',
+    verb15: 'regresar',
+    verb16: 'ver',
+    verb17: 'empezar',
+    verb18: 'pintar',
+    verb19: 'llevar',
+    verb20: 'quedar',
+    verb21: 'decir',
+    verb22: 'empezar',
+    verb23: 'gustar',
+    verb24: 'pintar',
+    verb25: 'ver',
+    verb26: 'recordar',
+    verb27: 'mostrar',
+    verb28: 'ver',
+    verb29: 'sonreír',
+    verb30: 'pensar',
+};
+
+document.getElementById('checkAnswers').addEventListener('click', () => {
+    let score = 0;
+    for (const [key, correctAnswer] of Object.entries(correctAnswers)) {
+        const userInput = document.getElementById(key).value.trim().toLowerCase();
+        if (userInput === correctAnswer) {
+            score++;
+        }
+    }
+    document.getElementById('result').innerText = `Tienes ${score} respuestas correctas de ${Object.keys(correctAnswers).length}.`;
+});
+
 // Obtener el canvas y su contexto
 const canvas = document.getElementById("drawingCanvas");
 const ctx = canvas.getContext("2d");
@@ -51,3 +95,11 @@ function saveCanvas() {
     link.href = canvas.toDataURL();
     link.click();
 }
+
+
+
+
+
+
+
+
