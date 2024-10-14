@@ -31,7 +31,7 @@ revealBtn.addEventListener("click", () => {
 // Dibujo
 <section id="drawingSection">
     <h2>Actividad de Dibujo</h2>
-    <img id="baseImage" src="ruta/a/tu/imagen.png" alt="Imagen base" style="display: none;">
+    <img id="baseImage" src="Gato_Artista_pintura.png" alt="Imagen base" style="display: none;">
     <canvas id="drawingCanvas" style="border:1px solid #000;"></canvas>
     <input type="color" id="colorPicker" value="#000000">
     <button id="clearBtn">Limpiar</button>
