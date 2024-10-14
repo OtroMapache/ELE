@@ -1,60 +1,50 @@
+/* Estilos para las actividades */
+
 body {
+    background-color: #F5F5DC;
     font-family: Arial, sans-serif;
-    background-color: #f7f1e3; /* Fondo color crema */
+    text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 h1 {
-    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
     color: #333;
 }
 
-.accordion-button {
-    display: block;
-    width: 100%;
-    text-align: left;
+.instructions {
+    margin-bottom: 20px;
+}
+
+.soup-container table, #crossword {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
     padding: 10px;
-    background-color: #dcd0c0;
-    border: none;
-    cursor: pointer;
     font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    text-align: center;
 }
 
-.accordion-content {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    display: none;
-    margin-bottom: 10px;
+.exercise-container {
+    margin: 20px;
 }
 
-.activity {
-    display: flex;
-    justify-content: space-between;
+.input-box {
+    width: 120px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.column {
-    width: 45%;
+.btn button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
-button {
-    padding: 10px 15px;
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-#drawingCanvas {
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-input[type="text"] {
-    width: 100px;
-    padding: 5px;
-    margin: 5px;
-}
