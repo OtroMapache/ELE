@@ -7,7 +7,7 @@ let isDrawing = false;
 
 // Cargar la imagen base
 const img = new Image();
-img.src = "images/gato_artista_base.png"; // Reemplaza esta ruta con la ruta correcta de tu imagen
+img.src = "Gato_Artista_pintura.png"; // Reemplaza esta ruta con la ruta correcta de tu imagen
 img.onload = function() {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 };
