@@ -6,9 +6,9 @@ body {
 }
 
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
+    background-color: #35424a;
+    color: white;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -19,25 +19,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-h1, h2 {
-    margin: 0;
-    padding: 10px 0;
-}
-
-section {
-    margin: 20px;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0 15px;
 }
 
 .accordion {
@@ -62,7 +44,7 @@ section {
 input[type="text"] {
     margin: 5px 0;
     padding: 5px;
-    width: calc(50% - 10px);
+    width: calc(40% - 10px); /* Ajustar el tamaño del input */
 }
 
 button {
@@ -83,4 +65,5 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
 }
+
 
