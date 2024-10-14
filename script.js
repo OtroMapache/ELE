@@ -94,3 +94,62 @@ document.getElementById("revealBtn").addEventListener("click", function() {
     document.getElementById("result").innerText = resultMessage;
 });
 
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const colorButtons = document.querySelectorAll('.colorButton');
+let currentColor = 'black';
+let painting = false;
+
+// Cargar la imagen de fondo
+const img = new Image();
+img.src = 'Gato_Artista_pintura.png';
+img.onload = () => {
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+
+// Iniciar el dibujo
+canvas.addEventListener('mousedown', (e) => {
+    painting = true;
+    draw(e);
+});
+
+// Finalizar el dibujo
+canvas.addEventListener('mouseup', () => {
+    painting = false;
+    ctx.beginPath();
+});
+
+// Dibujar en el lienzo
+canvas.addEventListener('mousemove', (e) => {
+    if (painting) {
+        draw(e);
+    }
+});
+
+// Seleccionar color
+colorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        currentColor = button.style.backgroundColor;
+        ctx.strokeStyle = currentColor;
+    });
+});
+
+// Función de dibujo
+function draw(e) {
+    ctx.lineWidth = 5; // Ajusta el tamaño del pincel
+    ctx.lineCap = 'round'; // Forma del pincel
+    ctx.strokeStyle = currentColor;
+
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+}
+
+// Descargar imagen
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'Gato_Artista_dibujo.png';
+    link.href = canvas.toDataURL();
+    link.click();
+});
