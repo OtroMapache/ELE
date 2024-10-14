@@ -3,71 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Acordeones de Pretérito</title>
+    <title>Actividad de Español</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Acordeones de Pretérito</h1>
-    <div class="accordion">
-        <div class="accordion-item">
-            <div class="accordion-header">1. Pretérito Simple</div>
-            <div class="accordion-content">Contenido del Pretérito Simple.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">2. Actividades del Pretérito Simple</div>
-            <div class="accordion-content">Contenido de Actividades del Pretérito Simple.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">3. Pretérito Indefinido</div>
-            <div class="accordion-content">Contenido del Pretérito Indefinido.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">4. Actividades del Pretérito Indefinido</div>
-            <div class="accordion-content">Contenido de Actividades del Pretérito Indefinido.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">5. Comparación entre ambos Pretéritos</div>
-            <div class="accordion-content">Contenido de Comparación entre ambos Pretéritos.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">6. Actividad de ambos Pretéritos</div>
-            <div class="accordion-content">
-                <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
-                </div>
 
-<ol>
-    <li>Gato Artista <input type="text" id="verb1" placeholder="soñar"></li>
-    <li>Desde muy pequeño, le <input type="text" id="verb2" placeholder="gustar"> dibujar...</li>
-    <li>...y <input type="text" id="verb3" placeholder="hacer"> pequeñas esculturas.</li>
-    <li>Decidió que quería <input type="text" id="verb4" placeholder="inscribir"> en la escuela de arte.</li>
-    <li>Gato Artista se <input type="text" id="verb5" placeholder="despertar"> muy emocionado.</li>
-    <li>Tomó sus pinceles y los <input type="text" id="verb6" placeholder="empaquetar"> en su mochila.</li>
-    <li>Se <input type="text" id="verb7" placeholder="ir"> a la escuela.</li>
-    <li>Cuando <input type="text" id="verb8" placeholder="llegar">, conoció a su maestro.</li>
-    <li>El Señor León Pintor <input type="text" id="verb9" placeholder="enseñar"> a los estudiantes...</li>
-    <li>Gato Artista <input type="text" id="verb10" placeholder="tener"> una clase especial de arte colombiano.</li>
-    <li>El profesor les <input type="text" id="verb11" placeholder="mostrar"> las obras de un gran artista.</li>
-    <li>Rodríguez <input type="text" id="verb12" placeholder="pintar"> la naturaleza...</li>
-    <li>Gato Artista se <input type="text" id="verb13" placeholder="quedar"> impresionado...</li>
-    <li>Le <input type="text" id="verb14" placeholder="gustar"> tanto los paisajes...</li>
-    <li>Decidió <input type="text" id="verb15" placeholder="decidir"> algo similar.</li>
-    <li>Gato Artista <input type="text" id="verb16" placeholder="pintar"> plantas y árboles.</li>
-    <li>Usó muchos colores y <input type="text" id="verb17" placeholder="llevar"> su pintura a la escuela.</li>
-    <li>Todos <input type="text" id="verb18" placeholder="mostrar"> sorprendidos con su trabajo.</li>
-    <li>El maestro le <input type="text" id="verb19" placeholder="decir">: "¡Es una pintura maravillosa!"</li>
-    <li>Gato Artista <input type="text" id="verb20" placeholder="empezar"> a pintar muchos paisajes.</li>
-    <li>Le <input type="text" id="verb21" placeholder="gustar"> ir al campo...</li>
-    <li>Siempre <input type="text" id="verb22" placeholder="recordar"> las lecciones de Abel Rodríguez.</li>
-    <li>Gato Artista <input type="text" id="verb23" placeholder="ver"> su serie de cuadros...</li>
-    <li>Todos <input type="text" id="verb24" placeholder="felicitar"> por su creatividad.</li>
-    <li>Gato Artista <input type="text" id="verb25" placeholder="sonreír"> y pensó...</li>
-    <li>Gracias a mi maestro, <input type="text" id="verb26" placeholder="encontrar"> mi inspiración.</li>
-</ol>
+<header>
+    <h1>Bienvenido a la Actividad de Español</h1>
+    <nav>
+        <ul>
+            <li><a href="#actividad1">Actividad 1</a></li>
+            <li><a href="#actividad2">Actividad 2</a></li>
+            <li><a href="#actividad3">Actividad 3</a></li>
+            <li><a href="#actividad4">Actividad 4</a></li>
+            <li><a href="#actividad5">Actividad 5</a></li>
+            <li><a href="#actividad6">Actividad 6</a></li>
+        </ul>
+    </nav>
+</header>
 
-<button onclick="checkAnswers()">Comprobar Respuestas</button>
-<button onclick="revealAnswers()">Revelar Respuestas</button>
+<section id="actividad1">
+    <h2>Actividad 1: Título de la Actividad 1</h2>
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Instrucciones de la Actividad 1.</p>
+    </div>
+    <p>Contenido de la Actividad 1...</p>
+</section>
 
-<div class="result" id="resultDiv"></div>
+<section id="actividad2">
+    <h2>Actividad 2: Título de la Actividad 2</h2>
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Instrucciones de la Actividad 2.</p>
+    </div>
+    <p>Contenido de la Actividad 2...</p>
+</section>
+
+<section id="actividad3">
+    <h2>Actividad 3: Título de la Actividad 3</h2>
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Instrucciones de la Actividad 3.</p>
+    </div>
+    <p>Contenido de la Actividad 3...</p>
+</section>
+
+<section id="actividad4">
+    <h2>Actividad 4: Título de la Actividad 4</h2>
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Instrucciones de la Actividad 4.</p>
+    </div>
+    <p>Contenido de la Actividad 4...</p>
+</section>
+
+<section id="actividad5">
+    <h2>Actividad 5: Título de la Actividad 5</h2>
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Instrucciones de la Actividad 5.</p>
+    </div>
+    <p>Contenido de la Actividad 5...</p>
+</section>
+
+<section id="actividad6">
+    <h2>Actividad 6: Completa los espacios con el verbo en pretérito simple</h2>
+
+    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
+    <div class="panel">
+        <p>Completa los espacios en blanco con los verbos conjugados en pretérito simple.</p>
+    </div>
+
+    <p>
+        Gato Artista <input type="text" id="verb1" placeholder="soñar"> desde muy pequeño, le 
+        <input type="text" id="verb2" placeholder="gustar"> dibujar y <input type="text" id="verb3" placeholder="hacer"> pequeñas esculturas. Decidió que quería 
+        <input type="text" id="verb4" placeholder="inscribir"> en la escuela de arte. Gato Artista se 
+        <input type="text" id="verb5" placeholder="despertar"> muy emocionado. Tomó sus pinceles y los 
+        <input type="text" id="verb6" placeholder="empaquetar"> en su mochila. Se 
+        <input type="text" id="verb7" placeholder="ir"> a la escuela. Cuando 
+        <input type="text" id="verb8" placeholder="llegar">, conoció a su maestro. El Señor León Pintor 
+        <input type="text" id="verb9" placeholder="enseñar"> a los estudiantes. Gato Artista 
+        <input type="text" id="verb10" placeholder="tener"> una clase especial de arte colombiano. El profesor les 
+        <input type="text" id="verb11" placeholder="mostrar"> las obras de un gran artista. Rodríguez 
+        <input type="text" id="verb12" placeholder="pintar"> la naturaleza. Gato Artista se 
+        <input type="text" id="verb13" placeholder="quedar"> impresionado. Le 
+        <input type="text" id="verb14" placeholder="gustar"> tanto los paisajes, que decidió 
+        <input type="text" id="verb15" placeholder="decidir"> algo similar. Gato Artista 
+        <input type="text" id="verb16" placeholder="pintar"> plantas y árboles, usó muchos colores y 
+        <input type="text" id="verb17" placeholder="llevar"> su pintura a la escuela. Todos 
+        <input type="text" id="verb18" placeholder="mostrar"> sorprendidos con su trabajo. El maestro le 
+        <input type="text" id="verb19" placeholder="decir">: "¡Es una pintura maravillosa!" Gato Artista 
+        <input type="text" id="verb20" placeholder="empezar"> a pintar muchos paisajes.
+    </p>
+    
+    <button id="checkBtn">Comprobar</button>
+    <button id="revealBtn">Revelar respuestas</button>
+    <p id="result"></p>
+</section>
 
 <script src="script.js"></script>
 </body>
