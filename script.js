@@ -4,11 +4,11 @@ const result = document.getElementById("result");
 
 checkBtn.addEventListener("click", () => {
     const verbs = [
-        "soñar", "gustar", "hacer", "decidir", "despertar", "tomar", "empacar", "ir",
-        "llegar", "conocer", "enseñar", "tener", "mostrar", "pintar", "quedar",
-        "gustar", "decidir", "regresar", "mirar", "ver", "tomar", "pintar",
-        "usar", "llevar", "quedaron", "decir", "empezar", "gustar", "pintar",
-        "ver", "recordar", "mostrar", "felicitar", "sonreir", "pensar"
+        "soñaba", "gustaba", "hacía", "Decidió", "despertó", "Tomó", "empacó", "fue",
+        "llegó", "conoció", "enseñaba", "tuvo", "mostraó", "pintó", "quedó",
+        "gustaron", "decidió", "regresó", "Miró", "vió", "Tomó", "pintó",
+        "usó", "llevó", "quedaron", "dijo", "empezó", "gustaba", "pintaba",
+        "veía", "recordaba", "mostró", "vieron", "felicitaron", "sonrió", "pensó"    
     ];
     let score = 0;
 
