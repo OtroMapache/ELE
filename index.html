@@ -117,27 +117,29 @@
     <button id="checkBtn">Comprobar</button>
     <button id="revealBtn">Revelar respuestas</button>
     <p id="result"></p>
-    <p>¡Diviértete dibujando sobre la imagen de Gato Artista!</p>
-    <canvas id="canvas" width="600" height="400" style="border: 1px solid #000;"></canvas>
-    <div id="colorPalette">
-        <button class="colorButton" style="background-color: red;"></button>
-        <button class="colorButton" style="background-color: orange;"></button>
-        <button class="colorButton" style="background-color: yellow;"></button>
-        <button class="colorButton" style="background-color: green;"></button>
-        <button class="colorButton" style="background-color: blue;"></button>
-        <button class="colorButton" style="background-color: purple;"></button>
-        <button class="colorButton" style="background-color: pink;"></button>
-        <button class="colorButton" style="background-color: cyan;"></button>
-        <button class="colorButton" style="background-color: magenta;"></button>
-        <button class="colorButton" style="background-color: lime;"></button>
-    </div>
-    <button id="downloadBtn">Descargar Imagen</button>
-</div>
+    </section>
+    
+   <section>
+        <h2>Actividad 2: Dibuja sobre la imagen</h2>
+        <div id="drawing-area">
+            <canvas id="drawing-canvas" width="600" height="400"></canvas>
+            <img id="base-image" src="tu-imagen-base.jpg" alt="Imagen base" style="display:none;">
+        </div>
+        <div>
+            <h3>Colores</h3>
+            <div class="color-button" style="background-color: red;" onclick="setColor('red')"></div>
+            <div class="color-button" style="background-color: green;" onclick="setColor('green')"></div>
+            <div class="color-button" style="background-color: blue;" onclick="setColor('blue')"></div>
+            <div class="color-button" style="background-color: yellow;" onclick="setColor('yellow')"></div>
+            <div class="color-button" style="background-color: black;" onclick="setColor('black')"></div>
+        </div>
+        <button id="downloadBtn">Descargar Imagen</button>
+    </section>
+</main>
 
-<script src="script.js"></script>
-</body>
-</html>    
-</section>
+<footer>
+    <p>© 2024 Actividad de Español</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
