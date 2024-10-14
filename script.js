@@ -1,53 +1,113 @@
-// Obtener el canvas y su contexto
-const canvas = document.getElementById("drawingCanvas");
-const ctx = canvas.getContext("2d");
+// Funciones para el acordeón
+var acc = document.getElementsByClassName("accordion-button");
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
 
-// Variables para dibujar
-let isDrawing = false;
+// Funciones para la actividad de completar (ambos pretéritos)
+function checkFillIn() {
+    const answers = {
+        verb1: 'soñaba',
+        verb2: 'gustaba',
+        verb3: 'hacía',
+        verb4: 'tuvo',
+        verb5: 'dio',
+        verb6: 'creaba',
+        verb7: 'pintaba'
+    };
 
-// Cargar la imagen base
-const img = new Image();
-img.src = "Gato_Artista_pintura.png"; // Reemplaza esta ruta con la ruta correcta de tu imagen
-img.onload = function() {
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-};
+    Object.keys(answers).forEach(function(id) {
+        const userAnswer = document.getElementById(id).value.toLowerCase().trim();
+        if (userAnswer === answers[id]) {
+            document.getElementById(id).style.backgroundColor = 'lightgreen'; // Respuesta correcta
+        } else {
+            document.getElementById(id).style.backgroundColor = 'lightcoral'; // Respuesta incorrecta
+        }
+    });
+}
 
-// Funciones de dibujo
-canvas.addEventListener("mousedown", startDrawing);
-canvas.addEventListener("mouseup", stopDrawing);
-canvas.addEventListener("mousemove", draw);
+function revealFillIn() {
+    const answers = {
+        verb1: 'soñaba',
+        verb2: 'gustaba',
+        verb3: 'hacía',
+        verb4: 'tuvo',
+        verb5: 'dio',
+        verb6: 'creaba',
+        verb7: 'pintaba'
+    };
 
-function startDrawing() {
-    isDrawing = true;
+    Object.keys(answers).forEach(function(id) {
+        document.getElementById(id).value = answers[id]; // Revelar la respuesta correcta
+        document.getElementById(id).style.backgroundColor = 'lightgreen'; // Marcar como correcto
+    });
+}
+
+// Funciones para la actividad de matching (Pretérito Simple)
+function checkMatching() {
+    alert('Función de comprobar pendiente');
+}
+
+function revealMatching() {
+    alert('Función de revelar respuestas pendiente');
+}
+
+// Actividad de dibujo
+const canvas = document.getElementById('drawingCanvas');
+const ctx = canvas.getContext('2d');
+let drawing = false;
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mousemove', draw);
+
+function startDrawing(e) {
+    drawing = true;
+    draw(e);
 }
 
 function stopDrawing() {
-    isDrawing = false;
+    drawing = false;
     ctx.beginPath();
 }
 
-function draw(event) {
-    if (!isDrawing) return;
-    ctx.lineWidth = 2;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "black";
-
-    ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+function draw(e) {
+    if (!drawing) return;
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'black';
+    
+    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
 }
 
-// Función para borrar el canvas (y volver a cargar la imagen base)
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Vuelve a cargar la imagen base
 }
 
-// Función para guardar el dibujo
 function saveCanvas() {
+    const dataURL = canvas.toDataURL('image/png');
     const link = document.createElement('a');
+    link.href = dataURL;
     link.download = 'mi_dibujo.png';
-    link.href = canvas.toDataURL();
     link.click();
+}
+
+// Funciones para el crucigrama (Pretérito Indefinido)
+function checkCrossword() {
+    alert('Función de comprobar crucigrama pendiente');
+}
+
+function revealCrossword() {
+    alert('Función de revelar respuestas del crucigrama pendiente');
 }
