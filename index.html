@@ -118,19 +118,16 @@
     <p id="result"></p>
 </section>
 
-<section id="actividadDibujo">
+<section id="drawingSection">
     <h2>Actividad de Dibujo</h2>
-    <button class="accordion" onclick="togglePanel(this)">Instrucciones</button>
-    <div class="panel">
-        <p>Dibuja una escena inspirada en la historia de Gato Artista. Utiliza al menos 10 colores diferentes y asegúrate de que el dibujo esté sobre la imagen de fondo que se proporciona.</p>
-    </div>
-    
-    <canvas id="drawingCanvas" width="600" height="400" style="border:1px solid #000000;"></canvas>
-    <p>Selecciona un color:</p>
+    <img id="baseImage" src="Gato_Artista_pintura.png" alt="Imagen base" style="display: none;">
+    <canvas id="drawingCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
     <input type="color" id="colorPicker" value="#000000">
     <button id="clearBtn">Limpiar</button>
     <button id="saveBtn">Guardar Dibujo</button>
     <p id="saveMessage"></p>
+</section>
+
 </section>
 
 <script src="script.js"></script>
