@@ -35,21 +35,31 @@ const colorPicker = document.getElementById('colorPicker');
 const clearBtn = document.getElementById('clearBtn');
 const saveBtn = document.getElementById('saveBtn');
 const saveMessage = document.getElementById('saveMessage');
+const baseImage = document.getElementById('baseImage');
 
 let drawing = false;
 
+// Dibuja la imagen en el lienzo
+baseImage.onload = () => {
+    context.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+};
+
+// Función para empezar a dibujar
 canvas.addEventListener('mousedown', (e) => {
     drawing = true;
     draw(e);
 });
 
+// Detiene el dibujo
 canvas.addEventListener('mouseup', () => {
     drawing = false;
     context.beginPath();
 });
 
+// Maneja el movimiento del mouse
 canvas.addEventListener('mousemove', draw);
 
+// Dibuja en el lienzo
 function draw(e) {
     if (!drawing) return;
     context.lineWidth = 5;
@@ -62,10 +72,13 @@ function draw(e) {
     context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
 }
 
+// Limpia el lienzo
 clearBtn.addEventListener('click', () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(baseImage, 0, 0, canvas.width, canvas.height); // Redibuja la imagen base
 });
 
+// Guarda el dibujo
 saveBtn.addEventListener('click', () => {
     const link = document.createElement('a');
     link.download = 'dibujo.png';
