@@ -51,6 +51,8 @@ const canvas = document.getElementById('paint-canvas');
 const ctx = canvas.getContext('2d');
 const backgroundImage = document.getElementById('background-image');
 const colorPicker = document.getElementById('color-picker');
+const toolPicker = document.getElementById('tool-picker');
+const brushSize = document.getElementById('brush-size');
 const clearButton = document.getElementById('clear-button');
 const downloadButton = document.getElementById('download-button');
 
@@ -67,24 +69,40 @@ window.onresize = resizeCanvas;
 
 // Variables para dibujar
 let isDrawing = false;
+let currentTool = 'pencil';
 let currentColor = colorPicker.value;
+let lineWidth = brushSize.value;
 
 // Cambiar el color del lápiz
 colorPicker.addEventListener('change', (event) => {
   currentColor = event.target.value;
 });
 
+// Cambiar el grosor del lápiz
+brushSize.addEventListener('input', (event) => {
+  lineWidth = event.target.value;
+});
+
+// Cambiar la herramienta de dibujo
+toolPicker.addEventListener('change', (event) => {
+  currentTool = event.target.value;
+});
+
 // Comenzar a dibujar
 canvas.addEventListener('mousedown', (event) => {
-  isDrawing = true;
-  ctx.moveTo(event.offsetX, event.offsetY);
+  if (currentTool === 'pencil') {
+    isDrawing = true;
+    ctx.moveTo(event.offsetX, event.offsetY);
+  } else if (currentTool === 'fill') {
+    floodFill(event.offsetX, event.offsetY, hexToRgb(currentColor));
+  }
 });
 
 // Dibujar cuando se mueve el mouse
 canvas.addEventListener('mousemove', (event) => {
-  if (isDrawing) {
+  if (isDrawing && currentTool === 'pencil') {
     ctx.strokeStyle = currentColor;
-    ctx.lineWidth = 3;
+    ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
     ctx.lineTo(event.offsetX, event.offsetY);
     ctx.stroke();
@@ -93,8 +111,10 @@ canvas.addEventListener('mousemove', (event) => {
 
 // Terminar de dibujar
 canvas.addEventListener('mouseup', () => {
-  isDrawing = false;
-  ctx.beginPath();
+  if (currentTool === 'pencil') {
+    isDrawing = false;
+    ctx.beginPath();
+  }
 });
 
 // Limpiar el canvas
@@ -109,3 +129,49 @@ downloadButton.addEventListener('click', () => {
   link.href = canvas.toDataURL();
   link.click();
 });
+
+// Función para realizar el relleno (flood fill)
+function floodFill(x, y, fillColor) {
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const pixels = imageData.data;
+  const stack = [[x, y]];
+  const targetColor = getPixelColor(x, y, pixels, canvas.width);
+  
+  while (stack.length > 0) {
+    const [cx, cy] = stack.pop();
+    const currentColor = getPixelColor(cx, cy, pixels, canvas.width);
+    
+    if (colorsMatch(currentColor, targetColor)) {
+      setPixelColor(cx, cy, fillColor, pixels, canvas.width);
+      stack.push([cx + 1, cy], [cx - 1, cy], [cx, cy + 1], [cx, cy - 1]);
+    }
+  }
+  
+  ctx.putImageData(imageData, 0, 0);
+}
+
+// Obtener el color de un píxel
+function getPixelColor(x, y, pixels, width) {
+  const index = (y * width + x) * 4;
+  return [pixels[index], pixels[index + 1], pixels[index + 2], pixels[index + 3]];
+}
+
+// Establecer el color de un píxel
+function setPixelColor(x, y, fillColor, pixels, width) {
+  const index = (y * width + x) * 4;
+  pixels[index] = fillColor[0];
+  pixels[index + 1] = fillColor[1];
+  pixels[index + 2] = fillColor[2];
+  pixels[index + 3] = 255; // Alpha
+}
+
+// Comparar colores
+function colorsMatch(c1, c2) {
+  return c1[0] === c2[0] && c1[1] === c2[1] && c1[2] === c2[2];
+}
+
+// Convertir hex a RGB
+function hexToRgb(hex) {
+  const bigint = parseInt(hex.slice(1), 16);
+  return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+}
