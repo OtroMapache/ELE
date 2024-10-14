@@ -9,6 +9,7 @@ document.getElementById("checkBtn").addEventListener("click", function() {
         "gustaba",
         "hacía",
         "decidió",
+        "inscribir",
         "despertó",
         "empaquetó",
         "fue",
