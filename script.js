@@ -46,7 +46,7 @@ accButtons.forEach(button => {
     });
 });
 
-// Variables necesarias 
+// Variables necesarias
 const canvas = document.getElementById('paint-canvas');
 const ctx = canvas.getContext('2d');
 const backgroundImage = document.getElementById('background-image');
@@ -56,20 +56,22 @@ const brushSize = document.getElementById('brush-size');
 const clearButton = document.getElementById('clear-button');
 const downloadButton = document.getElementById('download-button');
 
+// Dimensiones del canvas según la imagen de fondo
+function resizeCanvas() {
+  canvas.width = backgroundImage.width;
+  canvas.height = backgroundImage.height;
+  ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+}
+
+// Inicializamos el canvas
+backgroundImage.onload = resizeCanvas;
+window.onresize = resizeCanvas;
+
 // Variables para dibujar
 let isDrawing = false;
 let currentTool = 'pencil';
 let currentColor = colorPicker.value;
 let lineWidth = brushSize.value;
-
-// Dimensiones del canvas según la imagen de fondo o tamaño del dispositivo
-function resizeCanvas() {
-  canvas.width = window.innerWidth * 0.9; // Ajuste dinámico del ancho (90% de la pantalla)
-  canvas.height = window.innerHeight * 0.7; // Ajuste dinámico de la altura (70% de la pantalla)
-  ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
-}
-resizeCanvas();
-window.onresize = resizeCanvas;
 
 // Cambiar el color del lápiz
 colorPicker.addEventListener('change', (event) => {
@@ -86,81 +88,34 @@ toolPicker.addEventListener('change', (event) => {
   currentTool = event.target.value;
 });
 
-// Eventos de mouse
-canvas.addEventListener('mousedown', startDrawing);
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', stopDrawing);
-canvas.addEventListener('mouseout', stopDrawing);
-
-// Eventos táctiles para dispositivos móviles
-canvas.addEventListener('touchstart', startDrawingTouch, false);
-canvas.addEventListener('touchmove', drawTouch, false);
-canvas.addEventListener('touchend', stopDrawingTouch, false);
-canvas.addEventListener('touchcancel', stopDrawingTouch, false);
-
-// Iniciar dibujo con el mouse
-function startDrawing(event) {
+// Comenzar a dibujar
+canvas.addEventListener('mousedown', (event) => {
   if (currentTool === 'pencil') {
     isDrawing = true;
-    ctx.beginPath();
     ctx.moveTo(event.offsetX, event.offsetY);
   } else if (currentTool === 'fill') {
     floodFill(event.offsetX, event.offsetY, hexToRgb(currentColor));
   }
-}
+});
 
-// Iniciar dibujo con el toque
-function startDrawingTouch(event) {
-  event.preventDefault();
-  if (currentTool === 'pencil') {
-    isDrawing = true;
-    const touch = event.touches[0];
-    const touchX = touch.clientX - canvas.offsetLeft;
-    const touchY = touch.clientY - canvas.offsetTop;
-    ctx.beginPath();
-    ctx.moveTo(touchX, touchY);
+// Dibujar cuando se mueve el mouse
+canvas.addEventListener('mousemove', (event) => {
+  if (isDrawing && currentTool === 'pencil') {
+    ctx.strokeStyle = currentColor;
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
+    ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.stroke();
   }
-}
+});
 
-// Dibujar con el mouse
-function draw(event) {
-  if (!isDrawing || currentTool !== 'pencil') return;
-  ctx.strokeStyle = currentColor;
-  ctx.lineWidth = lineWidth;
-  ctx.lineCap = 'round';
-  ctx.lineTo(event.offsetX, event.offsetY);
-  ctx.stroke();
-}
-
-// Dibujar con el toque
-function drawTouch(event) {
-  event.preventDefault();
-  if (!isDrawing || currentTool !== 'pencil') return;
-  const touch = event.touches[0];
-  const touchX = touch.clientX - canvas.offsetLeft;
-  const touchY = touch.clientY - canvas.offsetTop;
-  ctx.strokeStyle = currentColor;
-  ctx.lineWidth = lineWidth;
-  ctx.lineCap = 'round';
-  ctx.lineTo(touchX, touchY);
-  ctx.stroke();
-}
-
-// Terminar el dibujo con el mouse
-function stopDrawing() {
+// Terminar de dibujar
+canvas.addEventListener('mouseup', () => {
   if (currentTool === 'pencil') {
     isDrawing = false;
     ctx.beginPath();
   }
-}
-
-// Terminar el dibujo con el toque
-function stopDrawingTouch() {
-  if (currentTool === 'pencil') {
-    isDrawing = false;
-    ctx.beginPath();
-  }
-}
+});
 
 // Limpiar el canvas
 clearButton.addEventListener('click', () => {
