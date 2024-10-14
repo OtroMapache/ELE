@@ -1,7 +1,23 @@
-function togglePanel(button) {
-    const panel = button.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
-}
+// Función para activar los acordeones
+document.addEventListener("DOMContentLoaded", function() {
+    var accordions = document.getElementsByClassName("accordion-button");
+
+    for (var i = 0; i < accordions.length; i++) {
+        accordions[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+});
+
+// Aquí sigue el resto de tus funciones
+
 
 document.getElementById("checkBtn").addEventListener("click", function() {
     const correctAnswers = [
