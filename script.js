@@ -8,52 +8,36 @@ accordions.forEach(accordion => {
     });
 });
 
-function checkFillIn() {
-    const correctAnswers = {
-        "verb1": "soñó",
-        "verb2": "gustó",
-        "verb3": "hizo",
-        "verb4": "inscribió",
-        "verb5": "despertó",
-        "verb6": "empaquetó",
-        "verb7": "fue",
-        "verb8": "llegó",
-        "verb9": "enseñó",
-        "verb10": "tuvo",
-        "verb11": "mostró",
-        "verb12": "pintó",
-        "verb13": "quedó",
-        "verb14": "gustaron",
-        "verb15": "regresó",
-        "verb16": "vio",
-        "verb17": "empezó",
-        "verb18": "pintó",
-        "verb19": "llevó",
-        "verb20": "quedaron",
-        "verb21": "dijo",
-        "verb22": "empezó",
-        "verb23": "gustó",
-        "verb24": "pintó",
-        "verb25": "vio",
-        "verb26": "recordó",
-        "verb27": "mostró",
-        "verb28": "vieron",
-        "verb29": "sonrió",
-        "verb30": "se sintió",
-        "verb31": "podía"
-    };
+const correctAnswers = [
+    "soñaba", "gustaba", "hacía", "inscribió", "despertó", 
+    "empaquetó", "fue", "llegó", "enseñaba", "tuvo", 
+    "mostró", "pintaba", "quedó", "gustaron", "decidió", 
+    "pintó", "llevó", "mostró", "dijo", "empezó", 
+    "gustaba", "recordaba", "mostró", "felicitaron", "sonrió", 
+    "encontró"
+];
 
-    let score = 0;
-    let totalQuestions = Object.keys(correctAnswers).length;
-
-    for (let verb in correctAnswers) {
-        let userAnswer = document.getElementById(verb).value.trim();
-        if (userAnswer === correctAnswers[verb]) {
-            score++;
+function checkAnswers() {
+    let correct = 0;
+    
+    for (let i = 1; i <= correctAnswers.length; i++) {
+        const userInput = document.getElementById(`verb${i}`).value;
+        if (userInput.toLowerCase() === correctAnswers[i - 1]) {
+            correct++;
         }
     }
+    document.getElementById('resultDiv').innerHTML = `Respuestas correctas: ${correct}/${correctAnswers.length}`;
+}
 
-    document.getElementById("result").innerText = `Has acertado ${score} de ${totalQuestions} respuestas.`;
+function revealAnswers() {
+    for (let i = 1; i <= correctAnswers.length; i++) {
+        document.getElementById(`verb${i}`).value = correctAnswers[i - 1]; // Mostrar respuestas correctas
+    }
+}
+
+function togglePanel(button) {
+    const panel = button.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
 }
 
 
