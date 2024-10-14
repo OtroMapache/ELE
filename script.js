@@ -1,31 +1,112 @@
-const checkBtn = document.getElementById("checkBtn");
-const revealBtn = document.getElementById("revealBtn");
-const result = document.getElementById("result");
+function togglePanel(button) {
+    const panel = button.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
 
-checkBtn.addEventListener("click", () => {
-    const verbs = [
-        "soñaba", "gustaba", "hacía", "Decidió", "despertó", "Tomó", "empacó", "fue",
-        "llegó", "conoció", "enseñaba", "tuvo", "mostraó", "pintó", "quedó",
-        "gustaron", "decidió", "regresó", "Miró", "vió", "Tomó", "pintó",
-        "usó", "llevó", "quedaron", "dijo", "empezó", "gustaba", "pintaba",
-        "veía", "recordaba", "mostró", "vieron", "felicitaron", "sonrió", "pensó"    
+document.getElementById("checkBtn").addEventListener("click", function() {
+    const correctAnswers = [
+        "soñaba",
+        "gustaba",
+        "hacía",
+        "Decidió",
+        "despertó",
+        "Tomó",
+        "empacó",
+        "fue",
+        "llegó",
+        "conoció",
+        "enseñaba",
+        "tuvo",
+        "mostró",
+        "pintó",
+        "quedó",
+        "gustaron",
+        "decidió",
+        "regresó",
+        "Miró",
+        "vió",
+        "Tomó",
+        "pintó",
+        "usó",
+        "llevó",
+        "quedaron",
+        "dijo",
+        "empezó",
+        "gustaba",
+        "pintaba",
+        "veía",
+        "recordaba",
+        "mostró",
+        "vieron",
+        "felicitaron",
+        "sonrió",
+        "pensó"
     ];
-    let score = 0;
 
-    verbs.forEach((verb, index) => {
-        const userInput = document.getElementById(`verb${index + 1}`).value;
-        if (userInput === verb) {
+    let score = 0;
+    const inputs = document.querySelectorAll("input[type='text']");
+    
+    inputs.forEach((input, index) => {
+        if (input.value.trim() === correctAnswers[index]) {
             score++;
+            input.style.backgroundColor = "lightgreen"; // Correct answer
+        } else {
+            input.style.backgroundColor = "lightcoral"; // Wrong answer
         }
     });
 
-    result.textContent = `Has acertado ${score} de ${verbs.length} respuestas.`;
+    const resultMessage = `Has acertado ${score} de ${correctAnswers.length} respuestas.`;
+    document.getElementById("result").innerText = resultMessage;
 });
 
-revealBtn.addEventListener("click", () => {
-    verbs.forEach((verb, index) => {
-        document.getElementById(`verb${index + 1}`).value = verb;
+document.getElementById("revealBtn").addEventListener("click", function() {
+    const correctAnswers = [
+        "soñaba",
+        "gustaba",
+        "hacía",
+        "Decidió",
+        "despertó",
+        "Tomó",
+        "empacó",
+        "fue",
+        "llegó",
+        "conoció",
+        "enseñaba",
+        "tuvo",
+        "mostró",
+        "pintó",
+        "quedó",
+        "gustaron",
+        "decidió",
+        "regresó",
+        "Miró",
+        "vió",
+        "Tomó",
+        "pintó",
+        "usó",
+        "llevó",
+        "quedaron",
+        "dijo",
+        "empezó",
+        "gustaba",
+        "pintaba",
+        "veía",
+        "recordaba",
+        "mostró",
+        "vieron",
+        "felicitaron",
+        "sonrió",
+        "pensó"
+    ];
+    const inputs = document.querySelectorAll("input[type='text']");
+    
+    inputs.forEach((input, index) => {
+        input.value = correctAnswers[index]; // Reveal correct answers
+        input.style.backgroundColor = "lightyellow"; // Change background color to indicate answers are revealed
     });
+
+    const resultMessage = "Respuestas reveladas.";
+    document.getElementById("result").innerText = resultMessage;
 });
 
 // Dibujo
