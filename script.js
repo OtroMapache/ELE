@@ -16,7 +16,7 @@ document.getElementById("checkBtn").addEventListener("click", function() {
         "enseñaba",
         "tuvo",
         "mostró",
-        "pintaba",
+        "pintó",
         "quedó",
         "gustaron",
         "decidió",
@@ -45,6 +45,29 @@ document.getElementById("checkBtn").addEventListener("click", function() {
 });
 
 document.getElementById("revealBtn").addEventListener("click", function() {
+    const correctAnswers = [
+        "soñaba",
+        "gustaba",
+        "hacía",
+        "decidió",
+        "despertó",
+        "empaquetó",
+        "fue",
+        "llegó",
+        "enseñaba",
+        "tuvo",
+        "mostró",
+        "pintó",
+        "quedó",
+        "gustaron",
+        "decidió",
+        "pintó",
+        "pintó",
+        "llevó",
+        "quedaron",
+        "dijo",
+        "empezó"
+    ];
     const inputs = document.querySelectorAll("input[type='text']");
     
     inputs.forEach((input, index) => {
@@ -55,3 +78,4 @@ document.getElementById("revealBtn").addEventListener("click", function() {
     const resultMessage = "Respuestas reveladas.";
     document.getElementById("result").innerText = resultMessage;
 });
+
