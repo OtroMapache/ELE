@@ -3,43 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 6</title>
-    <style>
-        /* Estilos básicos */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f2f0e4;
-        }
-        .accordion {
-            cursor: pointer;
-            padding: 10px;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-        }
-        .panel {
-            padding: 0 20px;
-            display: none;
-            overflow: hidden;
-            background-color: #f1f1f1;
-        }
-        .result {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Acordeones de Pretérito</title>
 </head>
 <body>
-
-<h1>Actividad 6: Completa los espacios con el verbo en pretérito simple</h1>
-
-<button class="accordion">Instrucciones</button>
-<div class="panel">
-    <p>Completa los espacios en blanco con los verbos conjugados en pretérito simple.</p>
-</div>
+    <h1>Acordeones de Pretérito</h1>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">1. Pretérito Simple</div>
+            <div class="accordion-content">Contenido del Pretérito Simple.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">2. Actividades del Pretérito Simple</div>
+            <div class="accordion-content">Contenido de Actividades del Pretérito Simple.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">3. Pretérito Indefinido</div>
+            <div class="accordion-content">Contenido del Pretérito Indefinido.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">4. Actividades del Pretérito Indefinido</div>
+            <div class="accordion-content">Contenido de Actividades del Pretérito Indefinido.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">5. Comparación entre ambos Pretéritos</div>
+            <div class="accordion-content">Contenido de Comparación entre ambos Pretéritos.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">6. Actividad de ambos Pretéritos</div>
+            <div class="accordion-content">
+                <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
+                </div>
 
 <ol>
     <li>Gato Artista <input type="text" id="verb1" placeholder="soñar"></li>
@@ -75,28 +69,6 @@
 
 <div class="result" id="resultDiv"></div>
 
-<script>
-function checkAnswers() {
-    let correct = 0;
-    const correctAnswers = ["soñaba", "gustaba", "hacía", "inscribió", "despertó", "empaquetó", "fue", "llegó", "enseñaba", "tuvo", "mostró", "pintaba", "quedó", "gustaron", "decidió", "pintó", "llevó", "mostró", "dijo", "empezó", "gustaba", "recordaba", "mostró", "felicitaron", "sonrió", "encontró"];
-    
-    for (let i = 1; i <= 26; i++) {
-        const userInput = document.getElementById(`verb${i}`).value;
-        if (userInput.toLowerCase() === correctAnswers[i - 1]) {
-            correct++;
-        }
-    }
-    document.getElementById('resultDiv').innerHTML = `Respuestas correctas: ${correct}/26`;
-}
-
-function revealAnswers() {
-    const correctAnswers = ["soñaba", "gustaba", "hacía", "inscribió", "despertó", "empaquetó", "fue", "llegó", "enseñaba", "tuvo", "mostró", "pintaba", "quedó", "gustaron", "decidió", "pintó", "llevó", "mostró", "dijo", "empezó", "gustaba", "recordaba", "mostró", "felicitaron", "sonrió", "encontró"];
-    
-    for (let i = 1; i <= 26; i++) {
-        document.getElementById(`verb${i}`).value = correctAnswers[i - 1]; // Mostrar respuestas correctas
-    }
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
