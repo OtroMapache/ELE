@@ -1,50 +1,57 @@
-/* Estilos para las actividades */
-
 body {
-    background-color: #F5F5DC;
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 h1 {
-    margin-top: 20px;
-}
-
-h2 {
-    color: #333;
-}
-
-.instructions {
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.soup-container table, #crossword {
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid black;
+.accordion-button {
+    background-color: #007bff;
+    color: white;
     padding: 10px;
-    font-size: 18px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+}
+
+.accordion-button:hover {
+    background-color: #0056b3;
+}
+
+.accordion-content {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.accordion-button.active + .accordion-content {
+    display: block;
+}
+
+.match-activity {
+    display: flex;
+    justify-content: space-around;
+}
+
+.match-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.crossword {
     text-align: center;
+    margin: 20px 0;
 }
 
-.exercise-container {
-    margin: 20px;
-}
 
-.input-box {
-    width: 120px;
-    font-size: 16px;
-    text-align: center;
-}
-
-.btn button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-}
 
