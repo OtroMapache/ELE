@@ -1,50 +1,57 @@
-
-const accordions = document.querySelectorAll(".accordion-title");
-
-accordions.forEach(accordion => {
-    accordion.addEventListener("click", function() {
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
-    });
-});
-
-const correctAnswers = [
-    "soñaba", "gustaba", "hacía", "inscribió", "despertó", 
-    "empaquetó", "fue", "llegó", "enseñaba", "tuvo", 
-    "mostró", "pintaba", "quedó", "gustaron", "decidió", 
-    "pintó", "llevó", "mostró", "dijo", "empezó", 
-    "gustaba", "recordaba", "mostró", "felicitaron", "sonrió", 
-    "encontró"
-];
-
-function checkAnswers() {
-    let correct = 0;
-    
-    for (let i = 1; i <= correctAnswers.length; i++) {
-        const userInput = document.getElementById(`verb${i}`).value;
-        if (userInput.toLowerCase() === correctAnswers[i - 1]) {
-            correct++;
-        }
-    }
-    document.getElementById('resultDiv').innerHTML = `Respuestas correctas: ${correct}/${correctAnswers.length}`;
-}
-
-function revealAnswers() {
-    for (let i = 1; i <= correctAnswers.length; i++) {
-        document.getElementById(`verb${i}`).value = correctAnswers[i - 1]; // Mostrar respuestas correctas
-    }
-}
-
 function togglePanel(button) {
     const panel = button.nextElementSibling;
     panel.style.display = panel.style.display === "block" ? "none" : "block";
 }
 
+document.getElementById("checkBtn").addEventListener("click", function() {
+    const correctAnswers = [
+        "soñaba",
+        "gustaba",
+        "hacía",
+        "decidió",
+        "despertó",
+        "empaquetó",
+        "fue",
+        "llegó",
+        "enseñaba",
+        "tuvo",
+        "mostró",
+        "pintaba",
+        "quedó",
+        "gustaron",
+        "decidió",
+        "pintó",
+        "pintó",
+        "llevó",
+        "quedaron",
+        "dijo",
+        "empezó"
+    ];
 
+    let score = 0;
+    const inputs = document.querySelectorAll("input[type='text']");
+    
+    inputs.forEach((input, index) => {
+        if (input.value.trim() === correctAnswers[index]) {
+            score++;
+            input.style.backgroundColor = "lightgreen"; // Correct answer
+        } else {
+            input.style.backgroundColor = "lightcoral"; // Wrong answer
+        }
+    });
 
+    const resultMessage = `Has acertado ${score} de ${correctAnswers.length} respuestas.`;
+    document.getElementById("result").innerText = resultMessage;
+});
 
+document.getElementById("revealBtn").addEventListener("click", function() {
+    const inputs = document.querySelectorAll("input[type='text']");
+    
+    inputs.forEach((input, index) => {
+        input.value = correctAnswers[index]; // Reveal correct answers
+        input.style.backgroundColor = "lightyellow"; // Change background color to indicate answers are revealed
+    });
 
-
-
-
-
+    const resultMessage = "Respuestas reveladas.";
+    document.getElementById("result").innerText = resultMessage;
+});
