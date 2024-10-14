@@ -3,70 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Acordeones de Pretérito</title>
+    <title>Actividad 6</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f2f0e4;
+        }
+        .accordion {
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .panel {
+            padding: 0 20px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Acordeones de Pretérito</h1>
-    <div class="accordion">
-        <div class="accordion-item">
-            <div class="accordion-header">1. Pretérito Simple</div>
-            <div class="accordion-content">Contenido del Pretérito Simple.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">2. Actividades del Pretérito Simple</div>
-            <div class="accordion-content">Contenido de Actividades del Pretérito Simple.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">3. Pretérito Indefinido</div>
-            <div class="accordion-content">Contenido del Pretérito Indefinido.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">4. Actividades del Pretérito Indefinido</div>
-            <div class="accordion-content">Contenido de Actividades del Pretérito Indefinido.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">5. Comparación entre ambos Pretéritos</div>
-            <div class="accordion-content">Contenido de Comparación entre ambos Pretéritos.</div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">6. Actividad de ambos Pretéritos</div>
-            <div class="accordion-content">
-                <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
-                <p id="fill-in-the-blanks">
-                    Gato Artista <input type="text" class="input-box" id="verb1" placeholder="soñar"> con ser un gran pintor y escultor. Desde muy pequeño, le <input type="text" class="input-box" id="verb2" placeholder="gustar"> dibujar en las paredes de su casa y <input type="text" class="input-box" id="verb3" placeholder="hacer"> pequeñas esculturas. Un día, decidió que quería aprender más sobre arte, así que se <input type="text" class="input-box" id="verb4" placeholder="inscribir"> en la escuela de arte.
-                </p>
-                <p>
-                    El primer día de clases, Gato Artista se <input type="text" class="input-box" id="verb5" placeholder="despertar"> muy emocionado. Tomó sus pinceles, un delantal, una libreta de dibujo y los <input type="text" class="input-box" id="verb6" placeholder="empaquetar"> en su mochila. Tomó su bicicleta y se <input type="text" class="input-box" id="verb7" placeholder="ir"> a la escuela. Cuando <input type="text" class="input-box" id="verb8" placeholder="llegar">, conoció a su maestro, el famoso Señor León Pintor.
-                </p>
-                <p>
-                    El Señor León Pintor <input type="text" class="input-box" id="verb9" placeholder="enseñar"> a los estudiantes a usar los colores y las formas.
-                </p>
-                <p>
-                    Un día, Gato Artista <input type="text" class="input-box" id="verb10" placeholder="tener"> una clase especial de arte colombiano. El profesor les <input type="text" class="input-box" id="verb11" placeholder="mostrar"> las obras de un gran artista llamado Abel Rodríguez. Rodríguez <input type="text" class="input-box" id="verb12" placeholder="pintar"> la naturaleza, los árboles y las plantas de su región. Gato Artista se <input type="text" class="input-box" id="verb13" placeholder="quedar"> impresionado con las pinturas de Abel Rodríguez. Le <input type="text" class="input-box" id="verb14" placeholder="gustar"> tanto los paisajes y las plantas, que decidió pintar algo similar.
-                </p>
-                <p>
-                    Esa tarde, Gato Artista <input type="text" class="input-box" id="verb15" placeholder="regresar"> a casa muy inspirado. Miró por la ventana y <input type="text" class="input-box" id="verb16" placeholder="ver"> los árboles y las flores de su jardín. Tomó sus pinceles y <input type="text" class="input-box" id="verb17" placeholder="empezar"> a pintar plantas, árboles y montañas. Usó muchos colores verdes y marrones, y <input type="text" class="input-box" id="verb18" placeholder="pintar"> cada hoja y cada rama con mucho detalle.
-                </p>
-                <p>
-                    Al día siguiente, Gato Artista <input type="text" class="input-box" id="verb19" placeholder="llevar"> su pintura a la escuela para mostrarla a sus compañeros. Todos <input type="text" class="input-box" id="verb20" placeholder="quedar"> sorprendidos con su trabajo. El maestro le <input type="text" class="input-box" id="verb21" placeholder="decir">: "¡Es una pintura maravillosa, Gato Artista! Lograste pintar la belleza de la naturaleza."
-                </p>
-                <p>
-                    Después de esa clase, Gato Artista <input type="text" class="input-box" id="verb22" placeholder="empezar"> a pintar muchos paisajes. Le <input type="text" class="input-box" id="verb23" placeholder="gustar"> ir al campo a mirar los árboles y las plantas, y luego <input type="text" class="input-box" id="verb24" placeholder="pintar"> lo que <input type="text" class="input-box" id="verb25" placeholder="ver">. Siempre <input type="text" class="input-box" id="verb26" placeholder="recordar"> las lecciones de Abel Rodríguez sobre cómo respetar y admirar la naturaleza.
-                </p>
-                <p>
-                    Meses después, en la exposición de la escuela, Gato Artista <input type="text" class="input-box" id="verb27" placeholder="mostrar"> su serie de cuadros sobre la naturaleza. Todos los que <input type="text" class="input-box" id="verb28" placeholder="ver"> sus obras lo felicitaron por su creatividad y talento.
-                </p>
-                <p>
-                    Gato Artista <input type="text" class="input-box" id="verb29" placeholder="sonreír"> y <input type="text" class="input-box" id="verb30" placeholder="sentir"> muy feliz. Sabía que, aunque a veces la vida puede ser difícil, siempre <input type="text" class="input-box" id="verb31" placeholder="poder"> expresar su amor por la naturaleza a través del arte.
-                </p>
-                <button onclick="checkFillIn()">Comprobar Respuestas</button>
-                <button onclick="revealAnswers()">Revelar Respuestas</button>
-                <div id="result"></div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+<h1>Actividad 6: Completa los espacios con el verbo en pretérito simple</h1>
+
+<button class="accordion">Instrucciones</button>
+<div class="panel">
+    <p>Completa los espacios en blanco con los verbos conjugados en pretérito simple.</p>
+</div>
+
+<ol>
+    <li>Gato Artista <input type="text" id="verb1" placeholder="soñar"></li>
+    <li>Desde muy pequeño, le <input type="text" id="verb2" placeholder="gustar"> dibujar...</li>
+    <li>...y <input type="text" id="verb3" placeholder="hacer"> pequeñas esculturas.</li>
+    <li>Decidió que quería <input type="text" id="verb4" placeholder="inscribir"> en la escuela de arte.</li>
+    <li>Gato Artista se <input type="text" id="verb5" placeholder="despertar"> muy emocionado.</li>
+    <li>Tomó sus pinceles y los <input type="text" id="verb6" placeholder="empaquetar"> en su mochila.</li>
+    <li>Se <input type="text" id="verb7" placeholder="ir"> a la escuela.</li>
+    <li>Cuando <input type="text" id="verb8" placeholder="llegar">, conoció a su maestro.</li>
+    <li>El Señor León Pintor <input type="text" id="verb9" placeholder="enseñar"> a los estudiantes...</li>
+    <li>Gato Artista <input type="text" id="verb10" placeholder="tener"> una clase especial de arte colombiano.</li>
+    <li>El profesor les <input type="text" id="verb11" placeholder="mostrar"> las obras de un gran artista.</li>
+    <li>Rodríguez <input type="text" id="verb12" placeholder="pintar"> la naturaleza...</li>
+    <li>Gato Artista se <input type="text" id="verb13" placeholder="quedar"> impresionado...</li>
+    <li>Le <input type="text" id="verb14" placeholder="gustar"> tanto los paisajes...</li>
+    <li>Decidió <input type="text" id="verb15" placeholder="decidir"> algo similar.</li>
+    <li>Gato Artista <input type="text" id="verb16" placeholder="pintar"> plantas y árboles.</li>
+    <li>Usó muchos colores y <input type="text" id="verb17" placeholder="llevar"> su pintura a la escuela.</li>
+    <li>Todos <input type="text" id="verb18" placeholder="mostrar"> sorprendidos con su trabajo.</li>
+    <li>El maestro le <input type="text" id="verb19" placeholder="decir">: "¡Es una pintura maravillosa!"</li>
+    <li>Gato Artista <input type="text" id="verb20" placeholder="empezar"> a pintar muchos paisajes.</li>
+    <li>Le <input type="text" id="verb21" placeholder="gustar"> ir al campo...</li>
+    <li>Siempre <input type="text" id="verb22" placeholder="recordar"> las lecciones de Abel Rodríguez.</li>
+    <li>Gato Artista <input type="text" id="verb23" placeholder="ver"> su serie de cuadros...</li>
+    <li>Todos <input type="text" id="verb24" placeholder="felicitar"> por su creatividad.</li>
+    <li>Gato Artista <input type="text" id="verb25" placeholder="sonreír"> y pensó...</li>
+    <li>Gracias a mi maestro, <input type="text" id="verb26" placeholder="encontrar"> mi inspiración.</li>
+</ol>
+
+<button onclick="checkAnswers()">Comprobar Respuestas</button>
+<button onclick="revealAnswers()">Revelar Respuestas</button>
+
+<div class="result" id="resultDiv"></div>
+
+<script>
+function checkAnswers() {
+    let correct = 0;
+    const correctAnswers = ["soñaba", "gustaba", "hacía", "inscribió", "despertó", "empaquetó", "fue", "llegó", "enseñaba", "tuvo", "mostró", "pintaba", "quedó", "gustaron", "decidió", "pintó", "llevó", "mostró", "dijo", "empezó", "gustaba", "recordaba", "mostró", "felicitaron", "sonrió", "encontró"];
+    
+    for (let i = 1; i <= 26; i++) {
+        const userInput = document.getElementById(`verb${i}`).value;
+        if (userInput.toLowerCase() === correctAnswers[i - 1]) {
+            correct++;
+        }
+    }
+    document.getElementById('resultDiv').innerHTML = `Respuestas correctas: ${correct}/26`;
+}
+
+function revealAnswers() {
+    const correctAnswers = ["soñaba", "gustaba", "hacía", "inscribió", "despertó", "empaquetó", "fue", "llegó", "enseñaba", "tuvo", "mostró", "pintaba", "quedó", "gustaron", "decidió", "pintó", "llevó", "mostró", "dijo", "empezó", "gustaba", "recordaba", "mostró", "felicitaron", "sonrió", "encontró"];
+    
+    for (let i = 1; i <= 26; i++) {
+        document.getElementById(`verb${i}`).value = correctAnswers[i - 1]; // Mostrar respuestas correctas
+    }
+}
+</script>
+
 </body>
 </html>
-
