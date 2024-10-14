@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f2f0e4
 }
 
 .accordion {
@@ -57,7 +58,7 @@ body {
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 60px;
   padding: 8px;
   margin: 4px 0;
   box-sizing: border-box;
