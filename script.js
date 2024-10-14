@@ -25,16 +25,16 @@ document.getElementById("checkBtn").addEventListener("click", function() {
         "llevó",
         "quedaron",
         "dijo",
-        "empezó"
-        "gustaba"
-        "pintaba"
-        "veía"
-        "recordaba"
-        "mostró"
-        "vieron"
-        "felicitaron"
-        "sonrió"
-        "pensó"
+        "empezó",
+        "gustaba",
+        "pintaba",
+        "veía",
+        "recordaba",
+        "mostró",
+        "vieron",
+        "felicitaron",
+        "sonrió",
+        "pensó",
     ];
 
     let score = 0;
