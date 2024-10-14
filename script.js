@@ -34,7 +34,7 @@ document.getElementById("checkBtn").addEventListener("click", function() {
         "vieron",
         "felicitaron",
         "sonrió",
-        "pensó",
+        "pensó"
     ];
 
     let score = 0;
