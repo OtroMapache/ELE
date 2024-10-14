@@ -3,66 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades de Verbos en Pretérito</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lecciones de Pretéritos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Actividades de Verbos en Pretérito</h1>
+    <h1>Lecciones de Pretéritos: Simple e Indefinido</h1>
 
-    <!-- Sopa de Letras -->
-    <section id="sopa-letras">
-        <h2>Sopa de Letras - Pretérito Simple</h2>
-        <div class="instructions">
-            <p>Encuentra las formas verbales en infinitivo dentro de la sopa de letras.</p>
-            <p>Verbos: <strong>pintar, esculpir, crear, imaginar, aprender, descubrir, inspirar, observar, admirar, moldear</strong></p>
+    <!-- Acordeón para los menús -->
+    <div class="accordion">
+        <!-- Sección de pretérito simple -->
+        <button class="accordion-button">1. Pretérito Simple</button>
+        <div class="accordion-content">
+            <p>Aquí encontrarás una explicación del pretérito simple...</p>
         </div>
-        <div class="soup-container">
-            <table>
-                <tr>
-                    <td>P</td><td>I</td><td>N</td><td>T</td><td>A</td><td>R</td><td>E</td><td>Z</td><td>S</td><td>A</td>
-                </tr>
-                <tr>
-                    <td>U</td><td>C</td><td>R</td><td>E</td><td>A</td><td>D</td><td>S</td><td>O</td><td>R</td><td>F</td>
-                </tr>
-                <tr>
-                    <td>F</td><td>G</td><td>L</td><td>E</td><td>C</td><td>A</td><td>U</td><td>I</td><td>R</td><td>M</td>
-                </tr>
-                <tr>
-                    <td>A</td><td>I</td><td>S</td><td>O</td><td>E</td><td>S</td><td>I</td><td>N</td><td>T</td><td>I</td>
-                </tr>
-                <tr>
-                    <td>S</td><td>J</td><td>D</td><td>I</td><td>R</td><td>I</td><td>M</td><td>E</td><td>E</td><td>G</td>
-                </tr>
-            </table>
-        </div>
-    </section>
 
-    <!-- Crucigrama -->
-    <section id="crucigrama">
-        <h2>Crucigrama - Pretérito Indefinido</h2>
-        <div class="instructions">
-            <p>Rellena el crucigrama con los verbos correctos en pretérito indefinido.</p>
-            <p>Verbos: <strong>caminar, aprender, mirar, descubrir, buscar, admirar, seguir</strong></p>
-        </div>
-        <div id="crossword"></div>
-    </section>
-
-    <!-- Llenar Espacios con Pretéritos -->
-    <section id="llenar-espacios">
-        <h2>Completa con Pretérito Imperfecto o Pretérito Indefinido</h2>
-        <div class="exercise-container">
-            <p>Gato Artista <input type="text" class="input-box" id="verb1" placeholder="soñar"> con ser un gran pintor y escultor. Desde muy pequeño, le <input type="text" class="input-box" id="verb2" placeholder="gustar"> dibujar en las paredes de su casa y <input type="text" class="input-box" id="verb3" placeholder="hacer"> pequeñas esculturas. Un día, decidió que quería aprender más sobre arte, así que se <input type="text" class="input-box" id="verb4" placeholder="inscribir"> en la escuela de arte.</p>
-
-            <p>El primer día de clases, Gato Artista se <input type="text" class="input-box" id="verb5" placeholder="despertar"> muy emocionado. Tomó sus pinceles, un delantal, una libreta de dibujo y los <input type="text" class="input-box" id="verb6" placeholder="empaquetar"> en su mochila. Tomó su bicicleta y se <input type="text" class="input-box" id="verb7" placeholder="ir"> a la escuela. Cuando <input type="text" class="input-box" id="verb8" placeholder="llegar">, conoció a su maestro, el famoso Señor León Pintor.</p>
-
-            <p>El Señor León Pintor <input type="text" class="input-box" id="verb9" placeholder="enseñar"> a los estudiantes a usar los colores y las formas. Un día, Gato Artista <input type="text" class="input-box" id="verb10" placeholder="tener"> una clase especial de arte colombiano...</p>
-
-            <div class="btn">
-                <button onclick="checkAnswers()">Comprobar</button>
-                <button onclick="revealAnswers()">Revelar Respuestas</button>
+        <!-- Actividad del pretérito simple -->
+        <button class="accordion-button">2. Actividades del Pretérito Simple</button>
+        <div class="accordion-content">
+            <p>Une los verbos en infinitivo con sus formas conjugadas en pretérito simple. Sólo hay 5 correctas:</p>
+            <div class="activity">
+                <div class="column">
+                    <p>Infinitivo:</p>
+                    <ul>
+                        <li>pintar</li>
+                        <li>crear</li>
+                        <li>esculpir</li>
+                        <li>diseñar</li>
+                        <li>modelar</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p>Conjugaciones:</p>
+                    <ul>
+                        <li>pinté</li>
+                        <li>pintió</li>
+                        <li>creé</li>
+                        <li>creió</li>
+                        <li>esculpí</li>
+                        <li>esculpió</li>
+                        <li>diseñé</li>
+                        <li>diseñió</li>
+                        <li>modelé</li>
+                        <li>modelió</li>
+                    </ul>
+                </div>
+                <button onclick="checkMatching()">Comprobar</button>
+                <button onclick="revealMatching()">Revelar Respuestas</button>
             </div>
         </div>
-    </section>
+
+        <!-- Sección de pretérito indefinido -->
+        <button class="accordion-button">3. Pretérito Indefinido</button>
+        <div class="accordion-content">
+            <p>Aquí encontrarás una explicación del pretérito indefinido...</p>
+        </div>
+
+        <!-- Actividad del pretérito indefinido (crucigrama) -->
+        <button class="accordion-button">4. Actividades del Pretérito Indefinido</button>
+        <div class="accordion-content">
+            <p>Crucigrama sobre el pretérito indefinido:</p>
+            <div id="crucigrama">
+                <!-- Aquí se generará el crucigrama -->
+            </div>
+            <button onclick="checkCrossword()">Comprobar</button>
+            <button onclick="revealCrossword()">Revelar Respuestas</button>
+        </div>
+
+        <!-- Comparación entre ambos pretéritos -->
+        <button class="accordion-button">5. Comparación entre ambos Pretéritos</button>
+        <div class="accordion-content">
+            <p>Aquí encontrarás una comparación entre el pretérito simple y el pretérito indefinido...</p>
+        </div>
+
+        <!-- Actividad de ambos pretéritos (fill-in-the-blanks y dibujo) -->
+        <button class="accordion-button">6. Actividad de ambos Pretéritos</button>
+        <div class="accordion-content">
+            <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
+            <p id="fill-in-the-blanks">
+                Gato Artista <input type="text" id="verb1" placeholder="verbo"> con ser un gran pintor y escultor. Desde muy pequeño, le <input type="text" id="verb2" placeholder="verbo"> dibujar en las paredes de su casa y <input type="text" id="verb3" placeholder="verbo"> pequeñas esculturas. Un día, <input type="text" id="verb4" placeholder="verbo"> la oportunidad de exponer su arte en una galería, y desde entonces, su vida <input type="text" id="verb5" placeholder="verbo"> un giro inesperado. Cada vez que <input type="text" id="verb6" placeholder="verbo"> una obra, la <input type="text" id="verb7" placeholder="verbo"> con un toque único y especial.
+            </p>
+            <button onclick="checkFillIn()">Comprobar</button>
+            <button onclick="revealFillIn()">Revelar Respuestas</button>
+
+            <!-- Actividad de dibujo -->
+            <canvas id="drawingCanvas" width="500" height="400" style="border: 1px solid black;"></canvas>
+            <p>Gato Artista está trabajando en esta pintura, ¿podrías ayudarle a terminarla?</p>
+            <button onclick="clearCanvas()">Borrar</button>
+            <button onclick="saveCanvas()">Guardar Dibujo</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
