@@ -44,7 +44,7 @@ nav ul li {
 input[type="text"] {
     margin: 5px 0;
     padding: 5px;
-    width: 30px; /* Ajustar al tamaño mínimo para una palabra */
+    width: 60px; /* Ajustar al tamaño mínimo para una palabra */
     display: inline-block; /* Asegura que los inputs se mantengan en línea */
 }
 
