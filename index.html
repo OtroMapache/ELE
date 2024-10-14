@@ -3,84 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Desplegable de Acordeones</title>
     <link rel="stylesheet" href="style.css">
+    <title>Acordeones de Pretérito</title>
 </head>
 <body>
-
-<h1>Menú de Acordeones</h1>
-
-<div class="accordion">
-    <button class="accordion-title">1. Pretérito Simple</button>
-    <div class="accordion-content">
-        <p>Contenido del Pretérito Simple aquí...</p>
+    <h1>Acordeones de Pretérito</h1>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">1. Pretérito Simple</div>
+            <div class="accordion-content">Contenido del Pretérito Simple.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">2. Actividades del Pretérito Simple</div>
+            <div class="accordion-content">Contenido de Actividades del Pretérito Simple.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">3. Pretérito Indefinido</div>
+            <div class="accordion-content">Contenido del Pretérito Indefinido.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">4. Actividades del Pretérito Indefinido</div>
+            <div class="accordion-content">Contenido de Actividades del Pretérito Indefinido.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">5. Comparación entre ambos Pretéritos</div>
+            <div class="accordion-content">Contenido de Comparación entre ambos Pretéritos.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">6. Actividad de ambos Pretéritos</div>
+            <div class="accordion-content">
+                <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
+                <p id="fill-in-the-blanks">
+                    Gato Artista <input type="text" class="input-box" id="verb1" placeholder="soñar"> con ser un gran pintor y escultor. Desde muy pequeño, le <input type="text" class="input-box" id="verb2" placeholder="gustar"> dibujar en las paredes de su casa y <input type="text" class="input-box" id="verb3" placeholder="hacer"> pequeñas esculturas. Un día, decidió que quería aprender más sobre arte, así que se <input type="text" class="input-box" id="verb4" placeholder="inscribir"> en la escuela de arte.
+                </p>
+                <p>
+                    El primer día de clases, Gato Artista se <input type="text" class="input-box" id="verb5" placeholder="despertar"> muy emocionado. Tomó sus pinceles, un delantal, una libreta de dibujo y los <input type="text" class="input-box" id="verb6" placeholder="empaquetar"> en su mochila. Tomó su bicicleta y se <input type="text" class="input-box" id="verb7" placeholder="ir"> a la escuela. Cuando <input type="text" class="input-box" id="verb8" placeholder="llegar">, conoció a su maestro, el famoso Señor León Pintor.
+                </p>
+                <p>
+                    El Señor León Pintor <input type="text" class="input-box" id="verb9" placeholder="enseñar"> a los estudiantes a usar los colores y las formas.
+                </p>
+                <p>
+                    Un día, Gato Artista <input type="text" class="input-box" id="verb10" placeholder="tener"> una clase especial de arte colombiano. El profesor les <input type="text" class="input-box" id="verb11" placeholder="mostrar"> las obras de un gran artista llamado Abel Rodríguez. Rodríguez <input type="text" class="input-box" id="verb12" placeholder="pintar"> la naturaleza, los árboles y las plantas de su región. Gato Artista se <input type="text" class="input-box" id="verb13" placeholder="quedar"> impresionado con las pinturas de Abel Rodríguez. Le <input type="text" class="input-box" id="verb14" placeholder="gustar"> tanto los paisajes y las plantas, que decidió pintar algo similar.
+                </p>
+                <p>
+                    Esa tarde, Gato Artista <input type="text" class="input-box" id="verb15" placeholder="regresar"> a casa muy inspirado. Miró por la ventana y <input type="text" class="input-box" id="verb16" placeholder="ver"> los árboles y las flores de su jardín. Tomó sus pinceles y <input type="text" class="input-box" id="verb17" placeholder="empezar"> a pintar plantas, árboles y montañas. Usó muchos colores verdes y marrones, y <input type="text" class="input-box" id="verb18" placeholder="pintar"> cada hoja y cada rama con mucho detalle.
+                </p>
+                <p>
+                    Al día siguiente, Gato Artista <input type="text" class="input-box" id="verb19" placeholder="llevar"> su pintura a la escuela para mostrarla a sus compañeros. Todos <input type="text" class="input-box" id="verb20" placeholder="quedar"> sorprendidos con su trabajo. El maestro le <input type="text" class="input-box" id="verb21" placeholder="decir">: "¡Es una pintura maravillosa, Gato Artista! Lograste pintar la belleza de la naturaleza."
+                </p>
+                <p>
+                    Después de esa clase, Gato Artista <input type="text" class="input-box" id="verb22" placeholder="empezar"> a pintar muchos paisajes. Le <input type="text" class="input-box" id="verb23" placeholder="gustar"> ir al campo a mirar los árboles y las plantas, y luego <input type="text" class="input-box" id="verb24" placeholder="pintar"> lo que <input type="text" class="input-box" id="verb25" placeholder="ver">. Siempre <input type="text" class="input-box" id="verb26" placeholder="recordar"> las lecciones de Abel Rodríguez sobre cómo respetar y admirar la naturaleza.
+                </p>
+                <p>
+                    Meses después, en la exposición de la escuela, Gato Artista <input type="text" class="input-box" id="verb27" placeholder="mostrar"> su serie de cuadros sobre la naturaleza. Todos los que <input type="text" class="input-box" id="verb28" placeholder="ver"> sus obras lo felicitaron por su creatividad y talento.
+                </p>
+                <p>
+                    Gato Artista <input type="text" class="input-box" id="verb29" placeholder="sonreír"> y <input type="text" class="input-box" id="verb30" placeholder="sentir"> muy feliz. Sabía que, aunque a veces la vida puede ser difícil, siempre <input type="text" class="input-box" id="verb31" placeholder="poder"> expresar su amor por la naturaleza a través del arte.
+                </p>
+                <button onclick="checkFillIn()">Comprobar Respuestas</button>
+                <button onclick="revealAnswers()">Revelar Respuestas</button>
+                <div id="result"></div>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="accordion">
-    <button class="accordion-title">2. Actividades del Pretérito Simple</button>
-    <div class="accordion-content">
-        <p>Contenido de las Actividades del Pretérito Simple aquí...</p>
-    </div>
-</div>
-
-<div class="accordion">
-    <button class="accordion-title">3. Pretérito Indefinido</button>
-    <div class="accordion-content">
-        <p>Contenido del Pretérito Indefinido aquí...</p>
-    </div>
-</div>
-
-<div class="accordion">
-    <button class="accordion-title">4. Actividades del Pretérito Indefinido</button>
-    <div class="accordion-content">
-        <p>Contenido de las Actividades del Pretérito Indefinido aquí...</p>
-    </div>
-</div>
-
-<div class="accordion">
-    <button class="accordion-title">5. Comparación entre ambos Pretéritos</button>
-    <div class="accordion-content">
-        <p>Contenido de la Comparación entre ambos Pretéritos aquí...</p>
-    </div>
-</div>
-
-<div class="accordion">
-    <button class="accordion-title">6. Actividad de ambos Pretéritos</button>
-    <div class="accordion-content">
-        <p>Rellena los espacios en el texto con los pretéritos adecuados:</p>
-        <p id="fill-in-the-blanks">
-            Gato Artista <input type="text" class="input-box" id="verb1" placeholder="soñó"> con ser un gran pintor y escultor. Desde muy pequeño, le <input type="text" class="input-box" id="verb2" placeholder="gustó"> dibujar en las paredes de su casa y <input type="text" class="input-box" id="verb3" placeholder="hizo"> pequeñas esculturas. Un día, decidió que quería aprender más sobre arte, así que se <input type="text" class="input-box" id="verb4" placeholder="inscribió"> en la escuela de arte.
-        </p>
-        <p>
-            El primer día de clases, Gato Artista se <input type="text" class="input-box" id="verb5" placeholder="despertó"> muy emocionado. Tomó sus pinceles, un delantal, una libreta de dibujo y los <input type="text" class="input-box" id="verb6" placeholder="empaquetó"> en su mochila. Tomó su bicicleta y se <input type="text" class="input-box" id="verb7" placeholder="fue"> a la escuela. Cuando <input type="text" class="input-box" id="verb8" placeholder="llegó">, conoció a su maestro, el famoso Señor León Pintor.
-        </p>
-        <p>
-            El Señor León Pintor <input type="text" class="input-box" id="verb9" placeholder="enseñó"> a los estudiantes a usar los colores y las formas.
-        </p>
-        <p>
-            Un día, Gato Artista <input type="text" class="input-box" id="verb10" placeholder="tuvo"> una clase especial de arte colombiano. El profesor les <input type="text" class="input-box" id="verb11" placeholder="mostró"> las obras de un gran artista llamado Abel Rodríguez. Rodríguez <input type="text" class="input-box" id="verb12" placeholder="pintó"> la naturaleza, los árboles y las plantas de su región. Gato Artista se <input type="text" class="input-box" id="verb13" placeholder="quedó"> impresionado por su talento.
-        </p>
-        <p>
-            Esa tarde, Gato Artista <input type="text" class="input-box" id="verb15" placeholder="regresó"> a casa muy inspirado. Miró por la ventana y <input type="text" class="input-box" id="verb16" placeholder="vio"> los árboles y las flores de su jardín. Tomó sus pinceles y <input type="text" class="input-box" id="verb17" placeholder="empezó"> a pintar plantas, árboles y montañas. Usó muchos colores verdes y marrones, y <input type="text" class="input-box" id="verb18" placeholder="pintó"> cada hoja y flor con mucho detalle.
-        </p>
-        <p>
-            Al día siguiente, Gato Artista <input type="text" class="input-box" id="verb19" placeholder="llevó"> su pintura a la escuela para mostrarla a sus compañeros. Todos <input type="text" class="input-box" id="verb20" placeholder="quedaron"> sorprendidos con su trabajo. El maestro le <input type="text" class="input-box" id="verb21" placeholder="dijo">: "¡Es una pintura maravillosa, Gato Artista! Lograste pintar la belleza de la naturaleza."
-        </p>
-        <p>
-            Después de esa clase, Gato Artista <input type="text" class="input-box" id="verb22" placeholder="empezó"> a pintar muchos paisajes. Le <input type="text" class="input-box" id="verb23" placeholder="gustó"> ir al campo a mirar los árboles y las plantas, y luego <input type="text" class="input-box" id="verb24" placeholder="pintó"> lo que <input type="text" class="input-box" id="verb25" placeholder="vio">. Siempre <input type="text" class="input-box" id="verb26" placeholder="recordó"> las lecciones que aprendió de su maestro.
-        </p>
-        <p>
-            Meses después, en la exposición de la escuela, Gato Artista <input type="text" class="input-box" id="verb27" placeholder="mostró"> su serie de cuadros sobre la naturaleza. Todos los que <input type="text" class="input-box" id="verb28" placeholder="vieron"> sus obras lo felicitaron por su creatividad y talento.
-        </p>
-        <p>
-            Gato Artista <input type="text" class="input-box" id="verb29" placeholder="sonrió"> y <input type="text" class="input-box" id="verb30" placeholder="se sintió"> muy feliz. Sabía que, aunque a veces la vida puede ser difícil, siempre <input type="text" class="input-box" id="verb31" placeholder="podía"> expresar su amor por la naturaleza a través del arte.
-        </p>
-        <button onclick="checkFillIn()">Comprobar Respuestas</button>
-        <div id="result"></div>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
