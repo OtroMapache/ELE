@@ -107,17 +107,18 @@ td {
   font-size: 16px;
 }
 
-.example-correct {
+.verbo-preterito-simple {
   color: green;
   font-weight: bold;
 }
 
-.example-incorrect {
+.verbo-preterito-imperfecto {
+  color: purple;
+  font-weight: bold;
+}
+
+.palabras-clave {
   color: red;
   font-weight: bold;
 }
 
-.example-imperfect {
-  color: purple;
-  font-weight: bold;
-}
