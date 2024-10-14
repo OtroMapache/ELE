@@ -1,20 +1,20 @@
 // Función para activar los acordeones
-document.addEventListener("DOMContentLoaded", function() {
-    var accordions = document.getElementsByClassName("accordion-button");
-
-    for (var i = 0; i < accordions.length; i++) {
-        accordions[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block'; // Alternar visibilidad
+    });
 });
+
+
+function revealAnswers() {
+    const correctAnswers = ["soñar", "gustar", "hacer", "inscribir", "despertar", "empaquetar", "ir", "llegar", "enseñar", "tener", "mostrar", "pintar", "quedar", "gustar", "regresar", "ver", "empezar", "pintar", "llevar", "quedar", "decir", "empezar", "gustar", "pintar", "recordar", "mostrar", "ver", "sonreír", "sentir", "poder"];
+    
+    for (let i = 1; i <= 31; i++) {
+        document.getElementById(`verb${i}`).value = correctAnswers[i - 1]; // Mostrar respuestas correctas
+    }
+}
+
 
 // Aquí sigue el resto de tus funciones
 
