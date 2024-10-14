@@ -18,43 +18,46 @@
 
         <button class="accordion-button">2. Actividades del Pretérito Simple</button>
         <div class="accordion-content">
-            <table>
-                <tr>
-                    <th>Verbo en infinitivo</th>
-                    <th>Conjugaciones (correctas e incorrectas)</th>
-                </tr>
-                <tr>
-                    <td>pintar</td>
-                    <td>pinté</td>
-                </tr>
-                <tr>
-                    <td>esculpir</td>
-                    <td>esculpió</td>
-                </tr>
-                <tr>
-                    <td>crear</td>
-                    <td>creó</td>
-                </tr>
-                <tr>
-                    <td>dibujar</td>
-                    <td>dibuió</td>
-                </tr>
-                <!-- Más verbos y formas verbales -->
-            </table>
-            <button>Comprobar</button>
-            <button>Revelar respuestas</button>
+            <p>Relaciona los verbos en infinitivo con las formas verbales correctas e incorrectas en pretérito simple:</p>
+            <div class="match-activity">
+                <div>
+                    <ul>
+                        <li>Pintar</li>
+                        <li>Esculpir</li>
+                        <li>Crear</li>
+                        <li>Dibujar</li>
+                        <li>Fotografiar</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>pinté</li>
+                        <li>pintí</li>
+                        <li>esculpió</li>
+                        <li>esculpó</li>
+                        <li>creó</li>
+                        <li>creió</li>
+                        <li>dibujó</li>
+                        <li>dibujió</li>
+                        <li>fotografió</li>
+                        <li>fotografié</li>
+                    </ul>
+                </div>
+            </div>
+            <button onclick="checkMatching()">Comprobar</button>
+            <button onclick="revealMatching()">Revelar respuestas</button>
         </div>
 
         <button class="accordion-button">3. Pretérito Indefinido</button>
         <div class="accordion-content">
-            <p>El pretérito indefinido se usa para describir acciones puntuales en el pasado.</p>
-        </div>
-
-        <button class="accordion-button">4. Actividades del Pretérito Indefinido</button>
-        <div class="accordion-content">
-            <!-- Crucigrama (puedes usar alguna herramienta externa o generarlo con HTML y CSS) -->
-            <p>Crucigrama: Completa con los verbos adecuados.</p>
-            <!-- Incluir un crucigrama real -->
+            <p>Completa el crucigrama con los verbos en pretérito indefinido.</p>
+            <div class="crossword">
+                <!-- Crucigrama (sencillo) -->
+                <p>Crucigrama (usa verbos en pretérito indefinido)</p>
+                <canvas id="crosswordCanvas" width="400" height="400" style="border: 1px solid black;"></canvas>
+            </div>
+            <button onclick="checkCrossword()">Comprobar</button>
+            <button onclick="revealCrossword()">Revelar respuestas</button>
         </div>
 
         <button class="accordion-button">5. Comparación entre ambos Pretéritos</button>
@@ -65,7 +68,7 @@
         <button class="accordion-button">6. Actividad de ambos Pretéritos</button>
         <div class="accordion-content">
             <p>Rellena los espacios en el texto con los pretéritos adecuados.</p>
-            <p>
+            <p id="fill-in-the-blanks">
                 Gato Artista soñaba con ser un gran pintor y escultor. Desde muy pequeño, le __________ (gustar) dibujar en las paredes de su casa y __________ (hacer) pequeñas esculturas. Un día, __________ (decidir) que quería aprender más sobre arte, así que __________ (inscribirse) en la escuela de arte.<br><br>
                 El primer día de clases, Gato Artista __________ (despertarse) muy emocionado. __________ (tomar) sus pinceles, un delantal, una libreta de dibujo y los __________ (empaquetar) en su mochila. __________ (tomar) su bicicleta y __________ (ir) a la escuela. Cuando __________ (llegar), __________ (conocer) a su maestro, el famoso Señor León Pintor. El Señor León Pintor __________ (enseñar) a los estudiantes a usar los colores y las formas.<br><br>
                 Un día, Gato Artista __________ (tener) una clase especial de arte colombiano. El profesor les __________ (mostrar) las obras de un gran artista llamado Abel Rodríguez. Rodríguez __________ (pintar) la naturaleza, los árboles y las plantas de su región. Gato Artista __________ (quedarse) impresionado con las pinturas de Abel Rodríguez. Le __________ (gustar) tanto los paisajes y las plantas, que __________ (decidir) pintar algo similar.<br><br>
@@ -75,6 +78,8 @@
                 Meses después, en la exposición de la escuela, Gato Artista __________ (mostrar) su serie de cuadros sobre la naturaleza. Todos los que __________ (ver) sus obras lo felicitaron por su creatividad y talento.<br><br>
                 Gato Artista __________ (sonreír) y __________ (pensar): "Gracias a mi maestro y a Abel Rodríguez, __________ (encontrar) mi inspiración en la naturaleza."
             </p>
+            <button onclick="checkFillIn()">Comprobar</button>
+            <button onclick="revealFillIn()">Revelar respuestas</button>
 
             <!-- Actividad de dibujo -->
             <canvas id="drawingCanvas" width="500" height="400" style="border: 1px solid black;"></canvas>
@@ -87,6 +92,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
