@@ -29,6 +29,17 @@ revealBtn.addEventListener("click", () => {
 });
 
 // Dibujo
+<section id="drawingSection">
+    <h2>Actividad de Dibujo</h2>
+    <img id="baseImage" src="ruta/a/tu/imagen.png" alt="Imagen base" style="display: none;">
+    <canvas id="drawingCanvas" style="border:1px solid #000;"></canvas>
+    <input type="color" id="colorPicker" value="#000000">
+    <button id="clearBtn">Limpiar</button>
+    <button id="saveBtn">Guardar Dibujo</button>
+    <p id="saveMessage"></p>
+</section>
+
+<script>
 const canvas = document.getElementById('drawingCanvas');
 const context = canvas.getContext('2d');
 const colorPicker = document.getElementById('colorPicker');
@@ -39,43 +50,62 @@ const baseImage = document.getElementById('baseImage');
 
 let drawing = false;
 
-// Dibuja la imagen en el lienzo
+// Dibuja la imagen en el lienzo después de que se carga
 baseImage.onload = () => {
-    context.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+    canvas.width = baseImage.width;
+    canvas.height = baseImage.height;
+    context.drawImage(baseImage, 0, 0);
 };
+
+// Obtén la posición del mouse relativa al lienzo
+function getMousePos(canvas, evt) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+    };
+}
 
 // Función para empezar a dibujar
 canvas.addEventListener('mousedown', (e) => {
     drawing = true;
-    draw(e);
+
+    // Inicia el dibujo en la posición actual del mouse
+    const pos = getMousePos(canvas, e);
+    context.beginPath();
+    context.moveTo(pos.x, pos.y);
 });
 
-// Detiene el dibujo
+// Detiene el dibujo al soltar el mouse
 canvas.addEventListener('mouseup', () => {
     drawing = false;
-    context.beginPath();
+    context.beginPath();  // Reinicia el trazo
 });
 
-// Maneja el movimiento del mouse
-canvas.addEventListener('mousemove', draw);
+// Detiene el dibujo si el mouse sale del lienzo
+canvas.addEventListener('mouseout', () => {
+    drawing = false;
+});
 
-// Dibuja en el lienzo
-function draw(e) {
+// Maneja el movimiento del mouse para dibujar
+canvas.addEventListener('mousemove', (e) => {
     if (!drawing) return;
+
+    const pos = getMousePos(canvas, e);
     context.lineWidth = 5;
     context.lineCap = 'round';
     context.strokeStyle = colorPicker.value;
 
-    context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    context.lineTo(pos.x, pos.y);  // Dibuja hasta la posición del mouse
     context.stroke();
     context.beginPath();
-    context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-}
+    context.moveTo(pos.x, pos.y);  // Inicia una nueva ruta desde el mouse
+});
 
 // Limpia el lienzo
 clearBtn.addEventListener('click', () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(baseImage, 0, 0, canvas.width, canvas.height); // Redibuja la imagen base
+    context.drawImage(baseImage, 0, 0);  // Redibuja la imagen base
 });
 
 // Guarda el dibujo
@@ -86,3 +116,5 @@ saveBtn.addEventListener('click', () => {
     link.click();
     saveMessage.textContent = 'Dibujo guardado como dibujo.png';
 });
+</script>
+
