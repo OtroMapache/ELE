@@ -175,3 +175,18 @@ function hexToRgb(hex) {
   const bigint = parseInt(hex.slice(1), 16);
   return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
 }
+// Lnuevo
+document.getElementById('save-button').addEventListener('click', function() {
+    const text = document.getElementById('text-input').value;
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'texto_gato_artista.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url); // Limpia el objeto URL
+});
+
