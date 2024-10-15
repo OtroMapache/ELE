@@ -137,49 +137,50 @@
             </p>
             <button onclick="checkAnswers()">Comprobar respuestas</button>
             <button onclick="revealAnswers()">Revelar respuestas</button>
-    <h1>¡Habla con Gato Artista!</h1>
+   <h1>¡Habla con Gato Artista!</h1>
 <p>¡Felicitaciones, ya conoces la gran historia de Gato Artista! Sin embargo, Gato Artista aún no te conoce, ¡cuéntale algo sobre tu vida!</p>
 
 <textarea id="text-input" rows="10" cols="50" placeholder="Escribe aquí lo que le quieras contar a Gato Artista"></textarea>
 <br>
 <button id="save-button">Guardar Texto</button>        
- <h1>¡Pinta con Gato Artista!</h1>
-<p>¡A Gato Artista le ha encantado tu historia! Ahora que son amigos, Gato Artista te ha invitado a pintar con él. Ayúdalo a terminar su próxima obra de arte.</p>
+            <h1>¡Pinta con Gato Artista!</h1>
+  <p>¡A Gato Artista le ha encantado tu historia! Ahora que son amigos, Gato Artista te ha invitado a pintar con él. Ayúdalo a terminar su próxima obra de arte.</p>
 
-<!-- Contenedor del canvas -->
-<div id="paint-container">
+  <!-- Contenedor del canvas -->
+  <div id="paint-container">
     <canvas id="paint-canvas"></canvas>
     <img id="background-image" src="monstera.png" alt="Imagen de fondo">
-</div>
+  </div>
 
-<!-- Selección de color -->
-<div>
+  <!-- Selección de color -->
+  <div>
     <label for="color-picker">Elige el color:</label>
     <input type="color" id="color-picker" value="#000000">
-</div>
+  </div>
 
-<!-- Selección de herramienta -->
-<div>
+  <!-- Selección de herramienta -->
+  <div>
     <label for="tool-picker">Elige la herramienta:</label>
     <select id="tool-picker">
-        <option value="pencil">Lápiz</option>
-        <option value="fill">Relleno</option>
+      <option value="pencil">Lápiz</option>
+      <option value="fill">Relleno</option>
     </select>
-</div>
+  </div>
 
-<!-- Selección de grosor -->
-<div>
+  <!-- Selección de grosor -->
+  <div>
     <label for="brush-size">Grosor del lápiz:</label>
     <input type="range" id="brush-size" min="1" max="10" value="3">
-</div>
+  </div>
 
-<!-- Botones de acciones -->
-<div>
+  <!-- Botones de acciones -->
+  <div>
     <button id="clear-button">Reiniciar</button>
     <button id="download-button">Descargar imagen</button>
-</div>
+        </div>
+    </div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
