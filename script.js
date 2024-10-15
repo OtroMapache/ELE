@@ -175,3 +175,27 @@ function hexToRgb(hex) {
   const bigint = parseInt(hex.slice(1), 16);
   return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
 }
+
+// spell
+const dictionary = ["artista", "colombiano", "amazona", "creció", "árboles", "selva", "naturaleza"]; // Agrega más palabras según tu necesidad
+
+// Función para verificar si una palabra está en el diccionario
+function isWordCorrect(word) {
+  return dictionary.includes(word.toLowerCase());
+}
+
+document.getElementById('spellcheck-button').addEventListener('click', function() {
+  const inputText = document.getElementById('text-input').value;
+  const words = inputText.split(' ');
+  let resultText = '';
+
+  words.forEach(word => {
+    if (isWordCorrect(word)) {
+      resultText += word + ' '; // Dejar sin cambio si la palabra está bien
+    } else {
+      resultText += `<span style="color: red">${word}</span> `; // Resaltar en rojo las palabras mal escritas
+    }
+  });
+
+  document.getElementById('spellcheck-result').innerHTML = resultText;
+});
