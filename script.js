@@ -177,11 +177,14 @@ function hexToRgb(hex) {
 }
 
 // spell
-const dictionary = ["artista", "colombiano", "amazona", "creció", "árboles", "selva", "naturaleza"]; // Agrega más palabras según tu necesidad
+// Inicializar Typo.js con el diccionario español
+const dictionary = new Typo("es_ES", "es_ES.aff", "es_ES.dic", {
+  platform: "any",
+});
 
 // Función para verificar si una palabra está en el diccionario
 function isWordCorrect(word) {
-  return dictionary.includes(word.toLowerCase());
+  return dictionary.check(word); // Verifica si la palabra está en el diccionario
 }
 
 document.getElementById('spellcheck-button').addEventListener('click', function() {
@@ -199,3 +202,4 @@ document.getElementById('spellcheck-button').addEventListener('click', function(
 
   document.getElementById('spellcheck-result').innerHTML = resultText;
 });
+
