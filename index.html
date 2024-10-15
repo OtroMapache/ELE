@@ -20,7 +20,7 @@
 
         <button class="accordion-btn">Pretérito Simple</button>
         <div class="panel">
-            <h1>¿Cuándo lo usamos?</h1>
+            <p>¿Cuándo lo usamos?</p>
             <p> - Usamos el pretérito simple para hablar de acciones completas en el pasado (empezaron y terminaron) </p>
             <p> - Estas acciones son puntuales y suceden en un momento específico (sabemos cuándo sucedió) </p>
             <p> Ejemplos: </p>
@@ -33,7 +33,7 @@
         <button class="accordion-btn">Pretérito Imperfecto</button>
         <div class="panel">
 
-            <h1>¿Cuándo lo usamos?</h1>
+            <p>¿Cuándo lo usamos?</p>
              <p> - Acciión repetida o habitual: Algo que sucedía frecuentemente en el pasado</p>
              <p> - Descripciones: Como eran las cosas en el pasado o las características de una persona</p>
              <p> - Acciones en progreso: Algo que ocurría cuando otra acción interrumpe </p>
@@ -94,8 +94,7 @@
 
         <button class="accordion-btn">Conoce a Gato Artista</button>
         <div class="panel">
-            <h1>¡Ahora estás listo para conocer a Gato Artista! </h1>
-
+            <p>¡Ahora estás listo para conocer a Gato Artista! </p>
             <img src="gato_artista.png" alt="x" style="width:100%; max-width:600px;">
             <p>
             <p> Gato Artista te contará la historia de cómo se convirtió en un gran artista, pero necesita tu ayuda para recordar todo, ¿Puedes ayudarle a Gato Artista completando los espacios en blanco con el pretérito adecuado?  </p>
@@ -138,13 +137,16 @@
             </p>
             <button onclick="checkAnswers()">Comprobar respuestas</button>
             <button onclick="revealAnswers()">Revelar respuestas</button>
-   <h1>¡Habla con Gato Artista!</h1>
+   <h1>¡Pinta con Gato Artista!</h1>
   <p>¡Felicitaciones, ya conoces la gran historia de Gato Artista! Sin embargo, Gato Artista aún no te conoce, ¡cuéntale algo sobre tu vida!</p>
-<!-- Incluye Typo.js y los archivos .dic y .aff -->
- <textarea id="text-input" placeholder="Escribe aquí lo que le quieras contar a Gato Artista"></textarea>
-  <button id="save-button">Guardar Texto</button>
+            <div class="spellcheck-container">
+  <textarea id="text-input" rows="10" cols="50" placeholder="Escribe tu texto aquí..."></textarea>
+  <br>
+  <button id="spellcheck-button">Corregir Ortografía</button>
+  <p id="spellcheck-result"></p>
+</div>
 
-<h1>¡Pinta con Gato Artista!</h1>
+   <h1>¡Pinta con Gato Artista!</h1>
   <p>¡A Gato Artísta le ha encantado tu historia! Ahora que son amigos, Gato Artista te ha invitado a pintar con él. Ayúdalo a terminar su próxima obra de arte.</p>
 
   <!-- Contenedor del canvas -->
