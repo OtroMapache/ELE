@@ -177,29 +177,12 @@ function hexToRgb(hex) {
 }
 
 // spell
-// Inicializar Typo.js con el diccionario español
-const dictionary = new Typo("es_ES", "es_ES.aff", "es_ES.dic", {
-  platform: "any",
-});
-
-// Función para verificar si una palabra está en el diccionario
-function isWordCorrect(word) {
-  return dictionary.check(word); // Verifica si la palabra está en el diccionario
-}
-
-document.getElementById('spellcheck-button').addEventListener('click', function() {
-  const inputText = document.getElementById('text-input').value;
-  const words = inputText.split(' ');
-  let resultText = '';
-
-  words.forEach(word => {
-    if (isWordCorrect(word)) {
-      resultText += word + ' '; // Dejar sin cambio si la palabra está bien
-    } else {
-      resultText += `<span style="color: red">${word}</span> `; // Resaltar en rojo las palabras mal escritas
-    }
-  });
-
-  document.getElementById('spellcheck-result').innerHTML = resultText;
+document.getElementById('save-button').addEventListener('click', function() {
+  const text = document.getElementById('text-input').value;
+  const blob = new Blob([text], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.download = 'mi_texto.txt'; // Nombre del archivo
+  link.click();
 });
 
