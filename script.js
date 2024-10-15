@@ -58,22 +58,14 @@ const downloadButton = document.getElementById('download-button');
 
 // Dimensiones del canvas según la imagen de fondo
 function resizeCanvas() {
-  if (backgroundImage.complete) { // Asegurarse de que la imagen esté cargada antes de redimensionar
-    canvas.width = backgroundImage.width;
-    canvas.height = backgroundImage.height;
-    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
-  }
+  canvas.width = backgroundImage.width;
+  canvas.height = backgroundImage.height;
+  ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 }
 
-// Inicializamos el canvas cuando la imagen ha cargado
+// Inicializamos el canvas
 backgroundImage.onload = resizeCanvas;
-
-// Evitar redimensionado continuo al cambiar el tamaño de la ventana
-let resizeTimeout;
-window.onresize = () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(resizeCanvas, 200); // Redimensionar después de un retraso
-};
+window.onresize = resizeCanvas;
 
 // Variables para dibujar
 let isDrawing = false;
@@ -121,7 +113,7 @@ canvas.addEventListener('mousemove', (event) => {
 canvas.addEventListener('mouseup', () => {
   if (currentTool === 'pencil') {
     isDrawing = false;
-    ctx.beginPath(); // Reiniciar el trazo para evitar que se conecte a futuros dibujos
+    ctx.beginPath();
   }
 });
 
@@ -197,4 +189,3 @@ document.getElementById('save-button').addEventListener('click', function() {
     document.body.removeChild(a);
     URL.revokeObjectURL(url); // Limpia el objeto URL
 });
-
