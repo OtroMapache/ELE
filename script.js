@@ -175,14 +175,3 @@ function hexToRgb(hex) {
   const bigint = parseInt(hex.slice(1), 16);
   return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
 }
-
-// spell
-document.getElementById('save-button').addEventListener('click', function() {
-  const text = document.getElementById('text-input').value;
-  const blob = new Blob([text], { type: 'text/plain' });
-  const link = document.createElement('a');
-  link.href = window.URL.createObjectURL(blob);
-  link.download = 'mi_texto.txt'; // Nombre del archivo
-  link.click();
-});
-
