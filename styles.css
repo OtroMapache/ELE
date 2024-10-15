@@ -147,3 +147,26 @@ button {
   padding: 10px 20px;
   font-size: 16px;
 }
+/* spellcheck*/
+.spellcheck-container {
+  text-align: center;
+  margin: 20px;
+}
+
+#text-input {
+  width: 90%;
+  height: 200px;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#spellcheck-result {
+  font-size: 18px;
+  margin-top: 20px;
+  color: red;
+}
+
+
